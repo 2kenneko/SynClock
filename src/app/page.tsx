@@ -34,6 +34,7 @@ export default function Page() {
   const time_localkeyname_Str: string = "time";
   const progress_count_localkeyname_Str: string = "check-count";
   const theme_localkeyname_Str: string = "local-theme";
+  const task_Str_localkeyname_Str : string = "whatstudy";
 
   useEffect(() => {
     //最初のみ実行
@@ -54,11 +55,20 @@ export default function Page() {
     if (!localStorage.getItem(theme_localkeyname_Str)) {
       localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
     }
+    if (!localStorage.getItem(task_Str_localkeyname_Str)) {
+      localStorage.setItem(task_Str_localkeyname_Str, "");
+    }
+
 
     settime_Num((time_Num) => {
       time_Num = Number(localStorage.getItem(time_localkeyname_Str)); //タイマーをストレージから取得
       return time_Num;
     });
+    settask_Str((task_Str) => {
+      task_Str = String(localStorage.getItem(task_Str_localkeyname_Str));
+      return task_Str;
+    })
+
   }
   function cleartime() {
     //リセット

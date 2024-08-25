@@ -26,10 +26,6 @@ export default function Page() {
   const whatstudy_locakkeyname_Str : string = "whatstudy";
   const link_top : string = "/";
   const router = useRouter();
-  useEffect(() => {
-    //最初のみ実行
-
-  }, []);
 
   function enterTask() {
     localStorage.setItem(whatstudy_locakkeyname_Str, task_Str);
