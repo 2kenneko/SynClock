@@ -28,18 +28,26 @@ export default function Page() {
 
   useEffect(() => {
     //最初のみ実行
-    window.setInterval(loop, 1000); // 1秒に1回実行
+    const intervalId = window.setInterval(loop, 1000); // 1秒に1回実行
     progress_Num = 0;
-
-    cpuname_Str =
-      cpuname_list_array[Math.floor(Math.random() * cpuname_list_array.length)];
+    setcpuname_Str(
+      cpuname_list_array[Math.floor(Math.random() * cpuname_list_array.length)]
+    );
+    return () => clearInterval(intervalId); // クリーンアップ
   }, []);
 
   function loop() {
-    setbottime_Num(bottime_Num + 1);
-    setprogress_Num(bottime_Num % 100); //100sでリセット)
-    localStorage.setItem(localkeyname_Str, String(bottime_Num));
+    setbottime_Num((bottime_Num) => bottime_Num + 1);
   }
+
+  useEffect(() => {
+    //progress_Numに更新があったときに実行
+    localStorage.setItem(localkeyname_Str, String(bottime_Num));
+
+    setprogress_Num((progress_Num) => {
+      return (progress_Num = bottime_Num % 100); // 100sでリセット
+    });
+  }, [bottime_Num]);
 
   return (
     <main>
@@ -49,10 +57,10 @@ export default function Page() {
           <Showtime time={bottime_Num} />
         </div>
 
-        <div className="progress-bar-wrapper">
-          <div className="progress-bar">
+        <div className={styles.progress_bar_wrapper}>
+          <div className={styles.progress_bar}>
             <div
-              className="progress"
+              className={styles.progress}
               style={{ width: `${progress_Num}%` }}
             ></div>
           </div>

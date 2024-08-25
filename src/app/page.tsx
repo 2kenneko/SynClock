@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from "react";
 import styles from "./css/page.module.css";
 
 import Showtime from "@/components/Showtime";
+import Bot from "@/components/Bot";
 export default function Page() {
   // SCRIPT SETUP
 
@@ -35,7 +36,9 @@ export default function Page() {
   useEffect(() => {
     //最初のみ実行
     checklocalkey();
-    window.setInterval(loop, 1000);
+    //const intervalId = window.setInterval(loop, 1000);
+    // クリーンアップ関数でタイマーをクリアする
+    //return () => clearInterval(intervalId);
   }, []);
 
   function checklocalkey() {
@@ -65,40 +68,45 @@ export default function Page() {
 
   }
 
-  function toggleRest() {
-    // トグルボタン
-    setisResting_Bool((isResting_Bool)=> {
-      isResting_Bool = !isResting_Bool;
-      console.error(isResting_Bool);
-      return isResting_Bool;
-    })
-
-  }
-
-
-  function loop() {
-    console.error(isResting_Bool);
-    //１秒毎にループ
-    if (!isResting_Bool) {
-      settime_Num((time_Num) => {
-        time_Num = time_Num + 1;
-        localStorage.setItem(time_localkeyname_Str, String(time_Num)); //時間の保存
-        return time_Num;
-      });
-      progress_Num = time_Num % 600;
-      if (progress_count_Num === 599) {
-        // プログレスバーがマックスになったとき
-        setprogress_count_Num((progress_count_Num) => {
-          return Number(progress_count_Num) + 1;
-        })
-
-        localStorage.setItem(
-          progress_count_localkeyname_Str,
-          String(progress_count_Num)
-        );
+  useEffect(() => {
+    //１秒毎に実行
+    // 今までのloopと同じ
+    const intervalId = window.setInterval(() => {
+      if (!isResting_Bool) {
+        settime_Num(prevTime_Num => prevTime_Num + 1);
       }
-    }
+    }, 1000);
+
+    // クリーンアップ関数
+    return () => clearInterval(intervalId);
+  }, [isResting_Bool]);
+
+  function toggleRest() {
+    setisResting_Bool(prevIsResting_Bool => !prevIsResting_Bool);
   }
+
+useEffect(()=>{
+  //timeが更新されたときに実行
+  setprogress_Num((progress_Num)=> {
+    progress_Num = time_Num % 600;
+
+    if (progress_count_Num === 599) {
+      // プログレスバーがマックスになったとき
+      setprogress_count_Num((progress_count_Num) => {
+        return Number(progress_count_Num) + 1;
+      });
+
+      localStorage.setItem(
+        progress_count_localkeyname_Str,
+        String(progress_count_Num)
+      );
+    }
+    return progress_Num;
+  })
+
+  localStorage.setItem(time_localkeyname_Str, String(time_Num)); //時間の保存
+},[time_Num])
+
 
   function hover_MouseOver(ishover: boolean) {
     //ボタンにマウスが乗ったとき
@@ -160,7 +168,11 @@ export default function Page() {
             {styles.theme_Bool ? "Light Mode" : "Dark Mode"}
           </button>
         </div>
-        <div className={styles.bot_container}></div>
+        <div className={styles.bot_container}>
+        <Bot />
+        <Bot />
+        <Bot />
+        </div>
       </div>
     </main>
   );
