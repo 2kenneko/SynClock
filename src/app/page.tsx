@@ -35,7 +35,7 @@ export default function Page() {
   useEffect(() => {
     //最初のみ実行
     checklocalkey();
-    starttimer();
+    window.setInterval(loop, 1000);
   }, []);
 
   function checklocalkey() {
@@ -54,11 +54,6 @@ export default function Page() {
       return (time_Num = Number(localStorage.getItem(time_localkeyname_Str))); //タイマーをストレージから取得
     });
   }
-
-  function starttimer() {
-    // タイマースタート
-    window.setInterval(loop, 1000);
-  }
   function cleartime() {
     //リセット
     localStorage.setItem(time_localkeyname_Str, "0");
@@ -70,7 +65,19 @@ export default function Page() {
 
   }
 
+  function toggleRest() {
+    // トグルボタン
+    setisResting_Bool((isResting_Bool)=> {
+      isResting_Bool = !isResting_Bool;
+      console.error(isResting_Bool);
+      return isResting_Bool;
+    })
+
+  }
+
+
   function loop() {
+    console.error(isResting_Bool);
     //１秒毎にループ
     if (!isResting_Bool) {
       settime_Num((time_Num) => {
@@ -97,10 +104,7 @@ export default function Page() {
     //ボタンにマウスが乗ったとき
     btn_hover_Bool = ishover;
   }
-  function toggleRest() {
-    // トグルボタン
-    isResting_Bool = !isResting_Bool;
-  }
+
   function toggleDarkMode() {
     theme_Bool = !theme_Bool;
     localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));

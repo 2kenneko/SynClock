@@ -1,0 +1,35 @@
+.set_font_size {
+  font-size: 150%;
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CPU {
+  /* margin-left: -50px; */
+  margin: 10px;
+}
+
+.progress_bar_wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.progress_bar {
+  background-color: rgb(145, 145, 145);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 0;
+  width: 20vw;
+}
+
+.progress {
+  height: 20px;
+  background-color: blue;
+  width: 0;
+  transition: width 1s linear;
+}
