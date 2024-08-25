@@ -3,7 +3,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState, useRef, use } from "react";
-import styles from "./CSS/bot.module.css";
+import styles from "./bot.module.css";
 import Showtime from "@/components/time-render/Showtime";
 export default function Page() {
   let [bottime_Num, setbottime_Num] = useState<number>(

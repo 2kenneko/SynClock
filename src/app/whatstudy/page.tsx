@@ -1,9 +1,10 @@
-// vueの index.vueと同じ
+
 
 "use client";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
-import styles from "../CSS/whatstudy.module.css";
+import { useRouter } from "next/navigation";
+import styles from "./whatstudy.module.css";
 
 
 export default function Page() {
@@ -22,22 +23,18 @@ export default function Page() {
   let [task_Str, settask_Str] = useState<string>(""); //タスクの名前
   let [istaskEnterd_Bool ,setistaskEnterd_Bool] = useState<boolean>(false);
 
-  const whatstudy_locakkeyname_Str : string = "whatstudy"
+  const whatstudy_locakkeyname_Str : string = "whatstudy";
+  const link_top : string = "/";
+  const router = useRouter();
   useEffect(() => {
     //最初のみ実行
 
   }, []);
 
   function enterTask() {
-    settask_Str((task_Str) => {
-      if (task_Str.trim() !== "") {
-        istaskEnterd_Bool = true;
-        localStorage.setItem(whatstudy_locakkeyname_Str, task_Str);
-      } else {
-        localStorage.setItem(whatstudy_locakkeyname_Str, "");
-      }
-      return task_Str;
-    })
+    localStorage.setItem(whatstudy_locakkeyname_Str, task_Str);
+    istaskEnterd_Bool = true;
+    router.push(link_top);  //TOPページへ遷移
   }
 
 
@@ -46,12 +43,16 @@ export default function Page() {
   <div className={styles.app}>
     <h1 >今勉強するべきことはなんですか？</h1>
     <div>
-      <input className={styles.input} placeholder="Enter a task" />
-    <div>path: '/'
+      <input
+        className={styles.input}
+        placeholder="Enter a task"
+        value={task_Str}
+        onChange={(event) => settask_Str(event.target.value)}
+      />
         <button className={styles.btn} onClick={enterTask}>
           <span>GO</span>
         </button>
-    </div>
+        
   </div>
   </div>
     </main>
