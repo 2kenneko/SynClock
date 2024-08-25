@@ -3,7 +3,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
-import styles from "./css/page.module.css";
+import styles from "./page.module.css";
 
 import Showtime from "@/components/time-render/Showtime";
 import Resttime  from "@/components/time-render/Resttime";
