@@ -159,7 +159,7 @@ useEffect(()=>{
           <div className={styles.parent}>
             <Image
               //src="/images/running-stickman-transparency.gif"
-              src='@/public/images/running-stickman-transparency.gif'
+              src='/images/running-stickman-transparency.gif'
               layout="responsive"
               width={1} // これを相対値に変換するためのベース
               height={1} // 幅に対する高さの割合（アスペクト比を維持）
