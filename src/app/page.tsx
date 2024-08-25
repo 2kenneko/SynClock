@@ -8,6 +8,7 @@ import styles from "./page.module.css";
 import Showtime from "@/components/time-render/Showtime";
 import Resttime  from "@/components/time-render/Resttime";
 import Bot from "@/components/Bot";
+import running_stickman_link from '@/assets/images/running-stickman-transparency.gif';
 export default function Page() {
   // SCRIPT SETUP
 
@@ -35,6 +36,8 @@ export default function Page() {
   const progress_count_localkeyname_Str: string = "check-count";
   const theme_localkeyname_Str: string = "local-theme";
   const task_Str_localkeyname_Str : string = "whatstudy";
+
+
 
   useEffect(() => {
     //最初のみ実行
@@ -159,7 +162,7 @@ useEffect(()=>{
           <div className={styles.parent}>
             <Image
               //src="/images/running-stickman-transparency.gif"
-              src='/public/images/running-stickman-transparency.gif'
+              src={running_stickman_link.src}
               layout="responsive"
               width={1} // これを相対値に変換するためのベース
               height={1} // 幅に対する高さの割合（アスペクト比を維持）
