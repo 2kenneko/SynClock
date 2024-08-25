@@ -4,7 +4,7 @@
 import Image from "next/image";
 import { useEffect, useState, useRef, use } from "react";
 import styles from "./CSS/bot.module.css";
-import Showtime from "@/components/Showtime";
+import Showtime from "@/components/time-render/Showtime";
 export default function Page() {
   let [bottime_Num, setbottime_Num] = useState<number>(
     Math.floor(Math.random() * 10000)
@@ -42,7 +42,6 @@ export default function Page() {
 
   useEffect(() => {
     //progress_Numに更新があったときに実行
-    localStorage.setItem(localkeyname_Str, String(bottime_Num));
 
     setprogress_Num((progress_Num) => {
       return (progress_Num = bottime_Num % 100); // 100sでリセット

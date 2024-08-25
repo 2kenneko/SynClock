@@ -1,8 +1,8 @@
 //Vue.js のDefaultと同じ
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Header_footer from "@/components/header-footer/header-footer";
+import "./CSS/globals.css";
+import Header_footer from "@/components/header-footer/Header-footer";
 
 const inter = Inter({ subsets: ["latin"] });
 

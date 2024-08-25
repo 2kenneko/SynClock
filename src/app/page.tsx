@@ -5,7 +5,8 @@ import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import styles from "./css/page.module.css";
 
-import Showtime from "@/components/Showtime";
+import Showtime from "@/components/time-render/Showtime";
+import Resttime  from "@/components/time-render/Resttime";
 import Bot from "@/components/Bot";
 export default function Page() {
   // SCRIPT SETUP
@@ -28,6 +29,7 @@ export default function Page() {
   let [progress_count_Num, setprogress_count_Num] = useState<Number>  (0); //プログレスバーが進むとカウントが進む
   let [theme_Bool, settheme_Bool]                 = useState<boolean> (false);
   let [btn_hover_Bool, setbtn_hover_Bool]         = useState<boolean> (false);
+  let [resttime_Num , setresttime_Num]            = useState<number>  (500);  //休憩時間
 
   const time_localkeyname_Str: string = "time";
   const progress_count_localkeyname_Str: string = "check-count";
@@ -54,7 +56,8 @@ export default function Page() {
     }
 
     settime_Num((time_Num) => {
-      return (time_Num = Number(localStorage.getItem(time_localkeyname_Str))); //タイマーをストレージから取得
+      time_Num = Number(localStorage.getItem(time_localkeyname_Str)); //タイマーをストレージから取得
+      return time_Num;
     });
   }
   function cleartime() {
@@ -62,7 +65,7 @@ export default function Page() {
     localStorage.setItem(time_localkeyname_Str, "0");
     localStorage.setItem(progress_count_localkeyname_Str, "0");
 
-    settime_Num(progress_Num=0);
+    settime_Num(time_Num=0);
     setprogress_Num(progress_Num=0);
     setprogress_count_Num(progress_count_Num=0);
 
@@ -73,7 +76,11 @@ export default function Page() {
     // 今までのloopと同じ
     const intervalId = window.setInterval(() => {
       if (!isResting_Bool) {
-        settime_Num(prevTime_Num => prevTime_Num + 1);
+        settime_Num((time_Num)=> {
+          time_Num = time_Num + 1;
+          localStorage.setItem(time_localkeyname_Str, String(time_Num)); //時間の保存
+          return time_Num;
+        })
       }
     }, 1000);
 
@@ -96,15 +103,13 @@ useEffect(()=>{
         return Number(progress_count_Num) + 1;
       });
 
-      localStorage.setItem(
-        progress_count_localkeyname_Str,
-        String(progress_count_Num)
+      localStorage.setItem(progress_count_localkeyname_Str,String(progress_count_Num)
       );
     }
     return progress_Num;
   })
 
-  localStorage.setItem(time_localkeyname_Str, String(time_Num)); //時間の保存
+
 },[time_Num])
 
 
@@ -128,16 +133,26 @@ useEffect(()=>{
             check: {String(progress_count_Num)} time: {time_Num}
           </p>
           <div className={styles.maincontent}>
+          {!isResting_Bool && (
             <Showtime time={time_Num} />
+          )}
+
+          {isResting_Bool && (
+            <div className={styles.maincontent_rest}>
+            <Resttime resttime_Num={resttime_Num} isRest_Bool={isResting_Bool} />
+            </div>
+          )}
+
+
           </div>
 
           <div className={styles.parent}>
             <Image
               src="/images/running-stickman-transparency.gif"
               layout="responsive"
-              width={10} // これを相対値に変換するためのベース
-              height={10} // 幅に対する高さの割合（アスペクト比を維持）
-              style={{ width: "10vw", height: "auto" }} // vw単位を使ったスタイル設定
+              width={1} // これを相対値に変換するためのベース
+              height={1} // 幅に対する高さの割合（アスペクト比を維持）
+              //style={{ width: "10px", height: "auto"}} // vw単位を使ったスタイル設定
               alt="stickman"
               loading="lazy"
               className={styles.running_stickman}
@@ -145,7 +160,7 @@ useEffect(()=>{
           </div>
 
           <div className={styles.progress_bar}>
-            <div className={styles.progress}></div>
+            <div className={styles.progress} style={{ width: `${progress_Num* (1 / 6)}%` }}></div>
           </div>
         </div>
         <div className={styles.btn_main}>

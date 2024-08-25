@@ -45,8 +45,14 @@ button:hover {
   z-index: 10;
   font-size: 10vw;
 }
+.maincontent_rest {
+  color: blue;
+  font-weight: bold;
+  z-index: 10;
+  font-size: 10vw;
+}
 
-.progress-bar {
+.progress_bar {
   background-color: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
@@ -62,9 +68,7 @@ button:hover {
   height: 20px;
   background-color: #3498db;
   width: 0;
-  width: progress_Num * (1 / 6) + '%'
-
-  /* transition: width 1s linear; */
+  transition: width 1s linear; 
 }
 
 .btn_main {
@@ -104,8 +108,10 @@ button:hover {
 .clear_button:hover {
   background-color: #c0392b;
 }
+
 .running_stickman {
-  width: 10vw;
+  width: 1vw;
+  max-width: 200px;
   position: relative;
   z-index: -100;
   margin: -40px;
