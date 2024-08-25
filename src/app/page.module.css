@@ -68,7 +68,7 @@ button:hover {
   height: 20px;
   background-color: #3498db;
   width: 0;
-  transition: width 1s linear; 
+  transition: width 1s linear;
 }
 
 .btn_main {

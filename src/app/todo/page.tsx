@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
-import styles from "./todo.module.css";
+import Image from 'next/image';
+import { useEffect, useState, useRef } from 'react';
+import styles from './todo.module.css';
 
 type Todo = {
   id: number;
@@ -40,7 +40,9 @@ export default function Page() {
       <h1>TODO List</h1>
       <div>
         <input className={styles.input} type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
-        <button className={styles.button} onClick={handleAddTodo}>Add</button>
+        <button className={styles.button} onClick={handleAddTodo}>
+          Add
+        </button>
       </div>
       <ul className={styles.ul}>
         {todos.map((todo) => (
@@ -48,10 +50,12 @@ export default function Page() {
             <span className={styles.span} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }} onClick={() => handleToggleTodo(todo.id)}>
               {todo.text}
             </span>
-            <button className={styles.button} onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
+            <button className={styles.button} onClick={() => handleDeleteTodo(todo.id)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
     </div>
   );
-};
+}
