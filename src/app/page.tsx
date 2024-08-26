@@ -17,9 +17,6 @@ export default function Page() {
   - ＿の後は大文字
   - 初期状態を保存しておく
 
-  - Boolは_Stage
-  - numberは_Value
-  - stringは_Str
 */
 
   let [task_Str, settask_Str] = useState<string>(''); //タスクの名前
