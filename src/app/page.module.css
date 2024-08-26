@@ -9,6 +9,7 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  z-index: 100;
 }
 
 /*
@@ -120,9 +121,12 @@ button:hover {
   width: 1vw;
   max-width: 200px;
   position: relative;
-  z-index: -100;
   margin: -40px;
 }
+.dark_mode .running_stickman {
+  filter: invert(1) brightness(2);
+}
+
 
 img:has(.dark_mode) {
   filter: invert(100%);
@@ -137,6 +141,8 @@ img:has(.dark_mode) {
 .dark_mode {
   background-color: #1e1e1e;
   color: #ffffff;
+
+  z-index: -99;
 }
 
 .dark_mode h1 {
@@ -177,6 +183,7 @@ img:has(.dark_mode) {
   background-color: #555555;
 }
 
-.dark_mode .running_stickman {
-  filter: invert(1) brightness(2);
-}
+
+
+
+
