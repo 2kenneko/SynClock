@@ -10,8 +10,7 @@ export default function Page() {
   const link_top: string = '/';
   const link_todo: string = '/todo';
   const link_whatstudy: string = '/whatstudy';
-
-  let [isScreenVertical_Bool, setisScreenVertical_Bool] = useState<boolean>(false);
+  
   function top_link() {
     router.push(link_top);
   }
