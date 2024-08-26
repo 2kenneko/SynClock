@@ -27,7 +27,7 @@ export default function Page() {
   let [progress_count_Num, setprogress_count_Num] = useState<Number>(0); //プログレスバーが進むとカウントが進む
   let [theme_Bool, settheme_Bool] = useState<boolean>(false);
   let [btn_hover_Bool, setbtn_hover_Bool] = useState<boolean>(false);
-  let [resttime_Num, setresttime_Num] = useState<number>(500); //休憩時間
+  let [resttime_Num, setresttime_Num] = useState<number>(3); //休憩時間
 
   const time_localkeyname_Str: string = 'time';
   const progress_count_localkeyname_Str: string = 'check-count';

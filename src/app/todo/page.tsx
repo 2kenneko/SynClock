@@ -39,7 +39,7 @@ export default function Page() {
     <div className={styles.APP}>
       <h1>TODO List</h1>
       <div>
-        <input className={styles.input} type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
+        <input className={styles.input} placeholder="Enter a TODO" type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
         <button className={styles.button} onClick={handleAddTodo}>
           Add
         </button>
