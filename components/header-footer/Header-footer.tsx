@@ -11,6 +11,9 @@ export default function Page() {
   const link_todo: string = '/todo';
   const link_whatstudy: string = '/whatstudy';
   
+  let [theme_Bool, settheme_Bool] = useState<boolean>(false);
+  const theme_localkeyname_Str: string = 'dark-theme';
+
   function top_link() {
     router.push(link_top);
   }
@@ -20,6 +23,14 @@ export default function Page() {
   function whatstudy_link() {
     router.push(link_whatstudy);
   }
+
+  //ダークモード切り替え
+  function toggleDarkMode() {
+    settheme_Bool(!theme_Bool);
+    //theme_Bool = !theme_Bool;
+    localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
+  }
+
 
   return (
     <main>
@@ -48,8 +59,10 @@ export default function Page() {
                 </button>
               </div>
 
-              <button className={styles.button}>
-                <span className={styles.lable}>Darkmode</span>
+              <button className={styles.button} onClick={toggleDarkMode}>
+                <span className={styles.lable}>
+                  {theme_Bool ? 'Light Mode' : 'Dark Mode'}
+                </span>
               </button>
             </div>
             <div className={styles.overlay}>

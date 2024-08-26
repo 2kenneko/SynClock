@@ -2,7 +2,7 @@
 
 'use client';
 import Image from 'next/image';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, SetStateAction } from 'react';
 import styles from './page.module.css';
 
 import Showtime from '@/components/time-render/Showtime';
@@ -29,9 +29,11 @@ export default function Page() {
   let [btn_hover_Bool, setbtn_hover_Bool] = useState<boolean>(false);
   let [resttime_Num, setresttime_Num] = useState<number>(3); //休憩時間
 
+  //const [theme_localkeyname_Str, settheme_localkeyname_Str] = useState<string>('dark-theme');
+
   const time_localkeyname_Str: string = 'time';
   const progress_count_localkeyname_Str: string = 'check-count';
-  const theme_localkeyname_Str: string = 'local-theme';
+  const theme_localkeyname_Str: string = 'dark-theme';
   const task_Str_localkeyname_Str: string = 'whatstudy';
 
   useEffect(() => {
@@ -124,6 +126,7 @@ export default function Page() {
     //theme_Bool = !theme_Bool;
     localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
   }
+
 
   return (
     <main id="app" className={theme_Bool ? `${styles.dark_mode}` : ''}>

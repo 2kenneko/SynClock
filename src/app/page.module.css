@@ -138,13 +138,14 @@ img:has(.dark_mode) {
   justify-content: space-around;
 }
 
+/*  
+  darkmodeの色を変更する
+*/
 .dark_mode {
   background-color: #1e1e1e;
   color: #ffffff;
-
   z-index: -99;
 }
-
 .dark_mode h1 {
   color: #ffffff;
 }
