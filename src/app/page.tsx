@@ -120,13 +120,14 @@ export default function Page() {
   }
 
   function toggleDarkMode() {
-    theme_Bool = !theme_Bool;
+    settheme_Bool(!theme_Bool);
+    //theme_Bool = !theme_Bool;
     localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
   }
 
   return (
     <main>
-      <div id="app" className={theme_Bool ? 'dark-mode' : ''}>
+      <div id="app" className={theme_Bool ? `${styles.dark_mode}` : ''}>
         <div className={styles.timer_container}>
           <h1>タイマーテスト</h1>
           <p>今勉強していること：{task_Str}</p>

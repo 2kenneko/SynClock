@@ -177,6 +177,6 @@ img:has(.dark_mode) {
   background-color: #555555;
 }
 
-.dark_mode .running-stickman {
+.dark_mode .running_stickman {
   filter: invert(1) brightness(2);
 }
