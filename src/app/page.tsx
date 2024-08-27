@@ -9,6 +9,8 @@ import Showtime from '@/components/time-render/Showtime';
 import Resttime from '@/components/time-render/Resttime';
 import Bot from '@/components/Bot';
 import running_stickman_link from '@/assets/images/running-stickman-transparency.gif';
+import { darkThemeState } from '~/components/header-footer/Header-footer';
+import { useRecoilState } from 'recoil';
 export default function Page() {
   // SCRIPT SETUP
 
@@ -25,16 +27,16 @@ export default function Page() {
   let [progress_Num, setprogress_Num] = useState<number>(0); //プログレスバーの進捗度
   let [togglebtn_Bool, settogglebtn_Bool] = useState<Boolean>(false); //トグルボタンの状態
   let [progress_count_Num, setprogress_count_Num] = useState<Number>(0); //プログレスバーが進むとカウントが進む
-  let [theme_Bool, settheme_Bool] = useState<boolean>(false);
   let [btn_hover_Bool, setbtn_hover_Bool] = useState<boolean>(false);
   let [resttime_Num, setresttime_Num] = useState<number>(3); //休憩時間
-
   //const [theme_localkeyname_Str, settheme_localkeyname_Str] = useState<string>('dark-theme');
 
   const time_localkeyname_Str: string = 'time';
   const progress_count_localkeyname_Str: string = 'check-count';
   const theme_localkeyname_Str: string = 'dark-theme';
   const task_Str_localkeyname_Str: string = 'whatstudy';
+
+  let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
 
   useEffect(() => {
     //最初のみ実行
@@ -43,6 +45,11 @@ export default function Page() {
     // クリーンアップ関数でタイマーをクリアする
     //return () => clearInterval(intervalId);
   }, []);
+
+  useEffect(() => {
+    console.log('Dark theme state has changed:', theme_Bool);
+    // 値が変わった時に行いたい処理をここに記述
+  }, [theme_Bool]); // isDarkThemeが変わるたびにこのuseEffectが実行される
 
   function checklocalkey() {
     // キーの存在を確認する
