@@ -70,7 +70,12 @@
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   margin-right: 10px;
-  background-color: #3498db;
+  background-color: #00c3ff;
+}
+
+.dark_mode .toggle_button {
+  background-color: #004d65;
+  color: #ffffff;
 }
 
 .clear_button {
@@ -83,10 +88,12 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   background-color: #e74c3c;
 }
+.dark_mode .clear_button {
+  background-color: #732219;
+}
 
-.toggle_button.hover {
-  background-color: #f1c40f;
-  color: black;
+.toggle_button:hover {
+  background-color: #009ccc;
 }
 
 .clear_button:hover {
@@ -129,10 +136,7 @@ img:has(.dark_mode) {
 .dark_mode p {
   color: #ffffff;
 }
-.dark_mode .toggle_button {
-  background-color: #00c3ff;
-  color: #ffffff;
-}
+
 
 .dark_mode .clear-button {
   background-color: #ff0000;
