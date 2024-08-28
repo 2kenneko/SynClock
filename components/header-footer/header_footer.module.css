@@ -1,7 +1,7 @@
 .header {
   display: flex;
   align-items: center;
-  background-color: #e6e6e6;
+  background-color: #f4f4f5;
   height: 7vw;
   max-height: 60px;
   justify-content: space-between;
@@ -18,6 +18,8 @@
   display: flex;
   gap: 10px;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 
 }
 .header-text {
@@ -25,31 +27,9 @@
   font-size: max(2vw, 25px);
 
 }
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2% 12px;
-  gap: 8px;
-  height: 5vh;
-  width: 12vw;
-  border: none;
-  background: #5e41de33;
-  border-radius: 20px;
-  cursor: pointer;
-}
 
-.lable {
-  line-height: 20px;
 
-  color: #5D41DE;
-  font-family: sans-serif;
-  letter-spacing: 1px;
 
-  white-space: nowrap;
-  overflow: hidden;
-  font-size:max(13px,1vw);
-}
 
 .button:hover {
   background: #5e41de4d;
@@ -133,8 +113,56 @@ ________________  Darkmode  ______________
   color: white;
 }
 .dark_mode .header {
-  background-color: #000000;
+  background-color: #3d3d43;
 }
 .dark_mode .footer {
-  background-color: #000000;
+  background-color: #3d3d43;
+}
+
+
+
+/*
+________________  Test  ______________
+*/
+.lable {
+  line-height: 20px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  font-size:max(13px,1vw);
+
+  
+}
+
+.menu_link {
+  justify-content: center;
+  display: flex;
+  height: 2.25rem; /* 9 * 0.25rem */
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem; /* 6px */
+  padding: 1rem;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  border: none;
+
+  
+}
+.menu_link:hover {
+  background-color: #c1c1c2;
+  color: black;
+}
+
+.dark_mode .menu_link {
+  background-color: #3d3d43;
+  color: white;
+}
+
+.dark_mode .menu_link:hover {
+  background-color: #5f5f69;
+  color: white;
 }

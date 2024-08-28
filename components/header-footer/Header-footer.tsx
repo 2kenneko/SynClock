@@ -57,24 +57,24 @@ export default function Page() {
           <div className={styles['header-right']}>
             <div className={styles['header-btn']}>
               <div>
-                <button onClick={top_link} className={styles.button}>
+                <button onClick={top_link} className={styles.menu_link}>
                   <span className={styles.lable}>TOP</span>
                 </button>
               </div>
 
               <div>
-                <button onClick={todo_link} className={styles.button}>
+                <button onClick={todo_link} className={styles.menu_link}>
                   <span className={styles.lable}>TODO</span>
                 </button>
               </div>
 
               <div>
-                <button onClick={whatstudy_link} className={styles.button}>
+                <button onClick={whatstudy_link} className={styles.menu_link}>
                   <span className={styles.lable}>What study?</span>
                 </button>
               </div>
 
-              <button className={styles.button} onClick={toggleDarkMode}>
+              <button className={styles.menu_link} onClick={toggleDarkMode}>
                 <span className={styles.lable}>
                   {theme_Bool ? 'Light Mode' : 'Dark Mode'}
                 </span>
