@@ -29,7 +29,7 @@ export default function Page() {
 
   return (
     <main className={darktheme ? `${styles.dark_mode}` : ''}>
-      <div className={styles.app}>
+      <div className={styles.main}>
         <h1 className={styles.h1}>今勉強するべきことはなんですか？</h1>
         <div>
           <input className={styles.input} placeholder="Enter a task" value={task_Str} onChange={(event) => settask_Str(event.target.value)} />

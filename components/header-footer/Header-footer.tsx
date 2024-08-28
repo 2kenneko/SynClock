@@ -20,7 +20,12 @@ export default function Page() {
 
   //let [theme_Bool, settheme_Bool] = useState<boolean>(false);
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
+  let [isFullScreen_Bool, setisFullScreen_Bool] = useState<boolean>(false);
   const theme_localkeyname_Str: string = 'dark_theme';
+
+  useEffect(()=> {
+
+  },[])
 
   function top_link() {
     router.push(link_top);
@@ -39,6 +44,14 @@ export default function Page() {
       localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
       return theme_Bool;
     });
+  }
+
+  // フルスクリーンのセット/解除
+  function toggleMaximize() {
+    /*
+    document.body.requestFullscreen();
+    document.exitFullscreen();
+    */
   }
 
   return (
@@ -71,10 +84,21 @@ export default function Page() {
               <button className={styles.menu_link} onClick={toggleDarkMode}>
                 <span className={styles.lable}>{theme_Bool ? 'Light Mode' : 'Dark Mode'}</span>
               </button>
+
+            <button className={styles.menu_link} onClick={toggleMaximize}>
+            <svg className={styles.maximize_img} xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4H4v3m13-3h3v3M7 20H4v-3m13 3h3v-3"></path></svg>
+            maximize
+            </button>
+
+
             </div>
             <div className={styles.overlay}>
               <Image src={landscape_screen.src} layout="responsive" width={1} height={1} alt="" loading="lazy" className={styles.landscape_screen} />
             </div>
+
+
+            
+
           </div>
         </header>
       </div>
