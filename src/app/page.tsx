@@ -159,15 +159,19 @@ export default function Page() {
             )}
           </div>
 
-          <div>
+          <div style={{ position: 'relative'}}>
             <Image
               src={running_stickman_link.src}
-              layout="responsive"
               width={1}
               height={1} 
               alt="stickman"
               loading="lazy"
               className={styles.running_stickman}
+              sizes="100vw"
+              style={{
+                width: '100%',
+                height: 'auto',
+              }}
 
             />
           </div>

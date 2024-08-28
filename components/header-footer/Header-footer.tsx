@@ -5,6 +5,9 @@ import styles from './header_footer.module.css';
 import { useRouter } from 'next/navigation';
 import landscape_screen from '@/assets/images/landscape-screen.gif';
 import { atom, useRecoilState } from 'recoil';
+import { FullScreen, useFullScreenHandle } from 'react-full-screen';
+import maxmize_icon from '@/assets/images/maximize.svg';
+import minimize_icon from '@/assets/images/minimize.svg';
 
 //キーを保存
 export const darkThemeState = atom({
@@ -21,11 +24,37 @@ export default function Page() {
   //let [theme_Bool, settheme_Bool] = useState<boolean>(false);
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
   let [isFullScreen_Bool, setisFullScreen_Bool] = useState<boolean>(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const handle = useFullScreenHandle();
+
   const theme_localkeyname_Str: string = 'dark_theme';
+  const fullscreen_localkeyname_Str: string = 'isfullscreen';
 
-  useEffect(()=> {
+  // ------------------------------------
+  // 画面のフルスクリーン切り替え
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
 
-  },[])
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, []);
+
+  const toggleMaximize = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch((err) => {
+        console.error(`フルスクリーンモードに切り替えられませんでした: ${err.message}`);
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  };
+  // ------------------------------------
 
   function top_link() {
     router.push(link_top);
@@ -46,14 +75,6 @@ export default function Page() {
     });
   }
 
-  // フルスクリーンのセット/解除
-  function toggleMaximize() {
-    /*
-    document.body.requestFullscreen();
-    document.exitFullscreen();
-    */
-  }
-
   return (
     <main>
       <div className={theme_Bool ? `${styles.dark_mode}` : ''}>
@@ -64,17 +85,27 @@ export default function Page() {
           <div className={styles['header-right']}>
             <div className={styles['header-btn']}>
               <div>
+                {/*————————————————————
+                    TOPボタン 
+                  _____________________
+                */}
                 <button onClick={top_link} className={styles.menu_link}>
                   <span className={styles.lable}>TOP</span>
                 </button>
               </div>
-
+              {/*————————————————————
+                    TODOボタン 
+                  _____________________
+              */}
               <div>
                 <button onClick={todo_link} className={styles.menu_link}>
                   <span className={styles.lable}>TODO</span>
                 </button>
               </div>
-
+              {/*——————————————————————
+                    What studyボタン 
+                  _____________________
+              */}
               <div>
                 <button onClick={whatstudy_link} className={styles.menu_link}>
                   <span className={styles.lable}>What study?</span>
@@ -85,20 +116,29 @@ export default function Page() {
                 <span className={styles.lable}>{theme_Bool ? 'Light Mode' : 'Dark Mode'}</span>
               </button>
 
-            <button className={styles.menu_link} onClick={toggleMaximize}>
-            <svg className={styles.maximize_img} xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4H4v3m13-3h3v3M7 20H4v-3m13 3h3v-3"></path></svg>
-            maximize
-            </button>
-
-
+              <button className={styles.menu_link} onClick={toggleMaximize}>
+                {/*——————————————————————
+                    最大/最小切り替えボタン 
+                  _______________________
+                */}
+                <div>
+                  {isFullscreen ? (
+                    <div className={styles.icon_container}>
+                      <Image src={minimize_icon.src} width={20} height={20} alt="" loading="lazy" className={styles.icon} />
+                      <div>minimize</div>
+                    </div>
+                  ) : (
+                    <div className={styles.icon_container}>
+                      <Image src={maxmize_icon.src} width={20} height={20} alt="" loading="lazy" className={styles.icon} />
+                      maxmize
+                    </div>
+                  )}
+                </div>
+              </button>
             </div>
             <div className={styles.overlay}>
               <Image src={landscape_screen.src} layout="responsive" width={1} height={1} alt="" loading="lazy" className={styles.landscape_screen} />
             </div>
-
-
-            
-
           </div>
         </header>
       </div>
