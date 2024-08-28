@@ -9,24 +9,17 @@ import { darkThemeState } from '~/components/header-footer/Header-footer';
 export default function Page() {
   // SCRIPT SETUP
 
-  /* 変数定義のルール
-  - わかりやすい名前
-  - ＿の後は大文字
-  - 初期状態を保存しておく
-
-  - Boolは_Stage
-  - numberは_Value
-  - stringは_Str
-*/
-
   let [task_Str, settask_Str] = useState<string>(''); //タスクの名前
   let [istaskEnterd_Bool, setistaskEnterd_Bool] = useState<boolean>(false);
-
   let [darktheme, setdarktheme] = useRecoilState(darkThemeState);
-  
   const whatstudy_locakkeyname_Str: string = 'whatstudy';
   const link_top: string = '/';
   const router = useRouter();
+
+  useEffect(()=> {
+    document.title = "whatstudy";
+  }, [])
+
 
   function enterTask() {
     localStorage.setItem(whatstudy_locakkeyname_Str, task_Str);

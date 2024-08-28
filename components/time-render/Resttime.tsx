@@ -10,12 +10,32 @@ type Props = {
 const Resttime: React.FC<Props> = ({ resttime_Num, isRest_Bool }) => {
   let [resttime_timeleft_Num, setresttime_timeleft_Num] = useState<number>(0);
 
+  let [timeS, settimeS] = useState<string>("00"); //秒
+  let [timeM, settimeM] = useState<string>("00"); //分
+  let [timeH, settimeH] = useState<string>("00"); //時
+
+
   useEffect(() => {
     if (isRest_Bool) {
       //setresttime_timeleft_Num((resttime_timeleft_Num = resttime_Num - 1));
       setresttime_timeleft_Num(resttime_Num);
     }
   }, [isRest_Bool, resttime_Num]);
+
+
+    // タイトルのために休憩時間を生成
+  useEffect(() => {
+    const seconds = (resttime_timeleft_Num % 60) - 1;
+    const minutes = Math.floor(resttime_timeleft_Num / 60) % 60;
+    const hours = Math.floor(resttime_timeleft_Num / (60 * 60)) % 24;
+    // パディングして時間を更新
+    settimeS(seconds.toString().padStart(2, "0"));
+    settimeM(minutes.toString().padStart(2, "0"));
+    settimeH(hours.toString().padStart(2, "0"));
+
+    document.title = `${timeH}:${timeM}:${timeS}`;
+  }, [resttime_timeleft_Num]);
+
 
   useEffect(() => {
     //１秒毎に実行

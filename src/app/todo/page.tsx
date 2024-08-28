@@ -17,18 +17,16 @@ type Todo = {
 export default function Page() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState<string>('');
-
   let [darktheme, setdarktheme] = useRecoilState(darkThemeState);
 
+    // タスクの保存
   const handleAddTodo = () => {
     if (newTodo.trim() === '') return;
-
     const newTask: Todo = {
       id: Date.now(),
       text: newTodo,
       completed: false,
     };
-
     setTodos([...todos, newTask]);
     setNewTodo('');
   };
@@ -40,6 +38,10 @@ export default function Page() {
   const handleDeleteTodo = (id: number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
+
+  useEffect(()=> {
+    document.title = "todo";
+  }, [])
 
   return (
     <div className={darktheme ? `${styles.dark_mode}` : ''}>

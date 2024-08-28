@@ -25,7 +25,7 @@ export default function Page() {
   let [togglebtn_Bool, settogglebtn_Bool] = useState<Boolean>(false); //トグルボタンの状態
   let [progress_count_Num, setprogress_count_Num] = useState<Number>(0); //プログレスバーが進むとカウントが進む
   let [btn_hover_Bool, setbtn_hover_Bool] = useState<boolean>(false);
-  let [resttime_Num, setresttime_Num] = useState<number>(3); //休憩時間
+  let [resttime_Num, setresttime_Num] = useState<number>(100); //休憩時間
 
   const time_localkeyname_Str: string = 'time';
   const progress_count_localkeyname_Str: string = 'check-count';
@@ -33,6 +33,26 @@ export default function Page() {
   const task_Str_localkeyname_Str: string = 'whatstudy';
 
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
+
+
+  let [timeS, settimeS] = useState<string>("00"); //秒
+  let [timeM, settimeM] = useState<string>("00"); //分
+  let [timeH, settimeH] = useState<string>("00"); //時
+
+  useEffect(() => {
+    const seconds = (time_Num % 60) + 1;
+    const minutes = Math.floor(time_Num / 60) % 60;
+    const hours = Math.floor(time_Num / (60 * 60)) % 24;
+    // パディングして時間を更新
+    settimeS(seconds.toString().padStart(2, "0"));
+    settimeM(minutes.toString().padStart(2, "0"));
+    settimeH(hours.toString().padStart(2, "0"));
+
+    document.title = `${timeH}:${timeM}:${timeS}`;
+  }, [time_Num]);
+
+
+
 
   useEffect(() => {
     //最初のみ実行

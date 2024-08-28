@@ -1,4 +1,5 @@
 "use client";
+import Head from 'next/head';
 import { useEffect, useState } from "react";
 
 type Props = {    
@@ -16,15 +17,20 @@ const Clock: React.FC<Props> = ({ time }) => {
     const seconds = time % 60;
     const minutes = Math.floor(time / 60) % 60;
     const hours = Math.floor(time / (60 * 60)) % 24;
-
     // パディングして時間を更新
     settimeS(seconds.toString().padStart(2, "0"));
     settimeM(minutes.toString().padStart(2, "0"));
     settimeH(hours.toString().padStart(2, "0"));
   }, [time]);
 
+
+
+
+
+
   return (
     <main>
+      
       <div>{ timeH }:{ timeM }:{ timeS }</div>
     </main>
   );
