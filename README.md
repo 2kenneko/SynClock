@@ -16,7 +16,7 @@
 
 ## Demo
 
-[https://2k2e2n.github.io/Clockshare_React/](https://2k2e2n.github.io/Clockshare_React/)
+[https://2k2e2n.github.io/ClockShare_React/](https://2k2e2n.github.io/ClockShare_React/)
 
 ![リンク名](./assets/Readme/Demo.gif)
 ## Getting Started
@@ -31,7 +31,7 @@
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/2k2e2n/Clockshare_React.git
+    git clone https://github.com/2k2e2n/ClockShare_React.git
     ```
 
 2. Navigate to the project directory:
