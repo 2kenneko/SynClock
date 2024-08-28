@@ -6,27 +6,21 @@ import { useRouter } from 'next/navigation';
 import landscape_screen from '@/assets/images/landscape-screen.gif';
 import { atom, useRecoilState } from 'recoil';
 
-
 //キーを保存
 export const darkThemeState = atom({
   key: 'dark_theme', // キーを指定
   default: false, // 初期値をfalseに設定（ダークテーマ無効）
 });
 
-
 export default function Page() {
-
-
-
   const router = useRouter();
   const link_top: string = '/';
   const link_todo: string = '/todo';
   const link_whatstudy: string = '/whatstudy';
-  
+
   //let [theme_Bool, settheme_Bool] = useState<boolean>(false);
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
   const theme_localkeyname_Str: string = 'dark_theme';
-
 
   function top_link() {
     router.push(link_top);
@@ -46,9 +40,6 @@ export default function Page() {
       return theme_Bool;
     });
   }
-
-
-
 
   return (
     <main>
@@ -78,9 +69,7 @@ export default function Page() {
               </div>
 
               <button className={styles.menu_link} onClick={toggleDarkMode}>
-                <span className={styles.lable}>
-                  {theme_Bool ? 'Light Mode' : 'Dark Mode'}
-                </span>
+                <span className={styles.lable}>{theme_Bool ? 'Light Mode' : 'Dark Mode'}</span>
               </button>
             </div>
             <div className={styles.overlay}>
