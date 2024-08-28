@@ -1,3 +1,5 @@
+
+
 .header {
   display: flex;
   align-items: center;
@@ -20,16 +22,11 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-
 }
 .header-text {
   white-space: nowrap;
   font-size: max(2vw, 25px);
-
 }
-
-
-
 
 .button:hover {
   background: #5e41de4d;
@@ -44,12 +41,13 @@
   left: 0;
   width: 100%;
   height: 100px;
-  background: #44aa33;
+
+
 }
 
-
-
-
+.dark_mode .overlay {
+  background-color: #1e1e1e !important;
+}
 
 /*
 ________________  overlayを表示  ______________
@@ -66,6 +64,7 @@ ________________  overlayを表示  ______________
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
   }
   .overlay {
     position: fixed;
@@ -79,6 +78,7 @@ ________________  overlayを表示  ______________
     align-items: center;
     z-index: 1000; /* 他の要素の上に表示 */
     transition: background-color 0.3s ease;
+    
   }
 }
 @media only screen and (orientation: landscape) {
@@ -106,7 +106,6 @@ ________________  overlayを表示  ______________
 /*
 ________________  Darkmode  ______________
 */
-
 
 
 .dark_mode {

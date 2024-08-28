@@ -1,5 +1,4 @@
 // vueの index.vueと同じ
-
 'use client';
 import Image from 'next/image';
 import { useEffect, useState, useRef, SetStateAction } from 'react';
@@ -13,12 +12,10 @@ import { darkThemeState } from '~/components/header-footer/Header-footer';
 import { useRecoilState } from 'recoil';
 export default function Page() {
   // SCRIPT SETUP
-
-  /* 変数定義のルール
+/* 変数定義のルール
   - わかりやすい名前
   - ＿の後は大文字
   - 初期状態を保存しておく
-
 */
 
   let [task_Str, settask_Str] = useState<string>(''); //タスクの名前
@@ -143,7 +140,7 @@ export default function Page() {
             )}
           </div>
 
-          <div className={styles.parent}>
+          <div>
             <Image
               src={running_stickman_link.src}
               layout="responsive"

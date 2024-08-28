@@ -3,12 +3,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header_footer from "@/components/header-footer/Header-footer";
-import { atom, RecoilRoot } from "recoil";
+import Header_footer, { darkThemeState } from "@/components/header-footer/Header-footer";
+import { atom, RecoilRoot, useRecoilState } from "recoil";
 
 
 const inter = Inter({ subsets: ["latin"] });
-
 
 
 
@@ -33,3 +32,4 @@ export default function RootLayout({
     </html>
   );
 }
+
