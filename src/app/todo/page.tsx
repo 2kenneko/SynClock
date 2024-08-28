@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import styles from './todo.module.css';
 import { useRecoilState } from 'recoil';
@@ -17,7 +16,20 @@ export default function Page() {
   const [newTodo, setNewTodo] = useState<string>('');
   let [darktheme, setdarktheme] = useRecoilState(darkThemeState);
 
-  // タスクの保存
+  // ページが読み込まれたときにlocalStorageからTODOリストを読み込む
+  useEffect(() => {
+    const savedTodos = localStorage.getItem('todos');
+    if (savedTodos) {
+      setTodos(JSON.parse(savedTodos));
+    }
+  }, []);
+
+  // TODOリストが変更されるたびにlocalStorageに保存
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
+  // タスクの追加
   const handleAddTodo = () => {
     if (newTodo.trim() === '') return;
     const newTask: Todo = {
@@ -37,6 +49,12 @@ export default function Page() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  // タスクを全てクリア
+  const handleClearTodos = () => {
+    setTodos([]);
+    localStorage.removeItem('todos');
+  };
+
   useEffect(() => {
     document.title = 'todo';
   }, []);
@@ -47,16 +65,30 @@ export default function Page() {
         <h1 className={styles.text}>TODO List</h1>
 
         <div>
-          <input className={styles.input} placeholder="Enter a TODO" type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
+          <input
+            className={styles.input}
+            placeholder="Enter a TODO"
+            type="text"
+            value={newTodo}
+            onChange={(e) => setNewTodo(e.target.value)}
+          />
           <button className={styles.button} onClick={handleAddTodo}>
             Add
+          </button>
+          <button className={styles.clear_button} onClick={handleClearTodos}>
+            Clear All
           </button>
         </div>
       </div>
       <ul className={styles.ul}>
         {todos.map((todo) => (
           <li key={todo.id} className={styles.li}>
-            <input className={styles.checkbox} type="checkbox" checked={todo.completed} onChange={() => handleToggleTodo(todo.id)} />
+            <input
+              className={styles.checkbox}
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => handleToggleTodo(todo.id)}
+            />
             <span className={styles.span} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
               {todo.text}
             </span>

@@ -48,6 +48,30 @@
   color: #ffffff;
 }
 
+
+.clear_button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #e74c3c;
+  margin: 20px;
+}
+.dark_mode .clear_button {
+  background-color: #732219;
+}
+
+.clear_button:hover {
+  background-color: #c0392b;
+}
+
+
+
+
+
 .ul {
   list-style-type: none;
   padding: 0;
