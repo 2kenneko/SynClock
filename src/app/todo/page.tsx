@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import styles from './todo.module.css';
+import { useRecoilState } from 'recoil';
+import { darkThemeState } from '~/components/header-footer/Header-footer';
 
 type Todo = {
   id: number;
@@ -10,9 +12,13 @@ type Todo = {
   completed: boolean;
 };
 
+
+
 export default function Page() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState<string>('');
+
+  let [darktheme, setdarktheme] = useRecoilState(darkThemeState);
 
   const handleAddTodo = () => {
     if (newTodo.trim() === '') return;
@@ -36,8 +42,8 @@ export default function Page() {
   };
 
   return (
-    <div className={styles.APP}>
-      <h1>TODO List</h1>
+    <div className={darktheme ? `${styles.dark_mode}` : ''}>
+      <h1 className={styles.text}>TODO List</h1>
       <div>
         <input className={styles.input} placeholder="Enter a TODO" type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
         <button className={styles.button} onClick={handleAddTodo}>

@@ -29,7 +29,7 @@ export default function Page() {
 
   const time_localkeyname_Str: string = 'time';
   const progress_count_localkeyname_Str: string = 'check-count';
-  const theme_localkeyname_Str: string = 'dark-theme';
+  const theme_localkeyname_Str: string = 'dark_theme';
   const task_Str_localkeyname_Str: string = 'whatstudy';
 
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
@@ -116,7 +116,6 @@ export default function Page() {
 
   function toggleDarkMode() {
     settheme_Bool(!theme_Bool);
-    //theme_Bool = !theme_Bool;
     localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
   }
 

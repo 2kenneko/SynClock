@@ -1,3 +1,12 @@
+.dark_mode .input {
+  background-color: #3d3d43;
+  border-color: #5f5f69;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.dark_mode .input::placeholder {
+  color: #a4a4b5;
+}
 .App {
   text-align: center;
   margin-top: 50px;
@@ -11,16 +20,27 @@
   border: 1px solid #ddd;
 }
 
+
 .button {
   margin: 5px;
   padding: 10px 20px;
   font-size: 16px;
   color: white;
-  background-color: #3498db;
+  background-color: #00c3ff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #009ccc;
+}
+.dark_mode .button:hover {
+  background-color: #009ccc;
+}
+.dark_mode .button {
+  background-color: #004d65;
+  color: #ffffff;
 }
 
 .ul {
@@ -31,7 +51,11 @@
 .li {
   margin: 10px 0;
   font-size: 20px;
+  margin: 10px;
 }
+.dark_mode .li {
+  color: white;
+} 
 
 .li .span {
   cursor: pointer;
@@ -40,4 +64,14 @@
 .li .button {
   margin-left: 20px;
   padding: 5px 10px;
+}
+
+
+
+
+
+
+.dark_mode .text {
+  color: white;
+  transition: background-color 0.3s ease;
 }

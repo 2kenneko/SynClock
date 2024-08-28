@@ -27,6 +27,7 @@ export default function Page() {
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
   const theme_localkeyname_Str: string = 'dark_theme';
 
+
   function top_link() {
     router.push(link_top);
   }
@@ -39,9 +40,11 @@ export default function Page() {
 
   //ダークモード切り替え
   function toggleDarkMode() {
-    settheme_Bool(!theme_Bool);
-    //theme_Bool = !theme_Bool;
-    localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
+    settheme_Bool((theme_Bool) => {
+      theme_Bool = !theme_Bool;
+      localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
+      return theme_Bool;
+    });
   }
 
 
