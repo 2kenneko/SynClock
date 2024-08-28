@@ -72,7 +72,7 @@
 
 
 /*
-  ______________  overlayを表示  ______________
+________________  overlayを表示  ______________
 */
 
 
@@ -121,4 +121,20 @@
     z-index: -1000; /* 他の要素の上に表示 */
     transition: background-color 0.3s ease;
   }
+}
+
+/*
+________________  Darkmode  ______________
+*/
+
+
+
+.dark_mode {
+  color: white;
+}
+.dark_mode .header {
+  background-color: #000000;
+}
+.dark_mode .footer {
+  background-color: #000000;
 }

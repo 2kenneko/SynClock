@@ -29,7 +29,6 @@ export default function Page() {
   let [progress_count_Num, setprogress_count_Num] = useState<Number>(0); //プログレスバーが進むとカウントが進む
   let [btn_hover_Bool, setbtn_hover_Bool] = useState<boolean>(false);
   let [resttime_Num, setresttime_Num] = useState<number>(3); //休憩時間
-  //const [theme_localkeyname_Str, settheme_localkeyname_Str] = useState<string>('dark-theme');
 
   const time_localkeyname_Str: string = 'time';
   const progress_count_localkeyname_Str: string = 'check-count';
@@ -41,15 +40,7 @@ export default function Page() {
   useEffect(() => {
     //最初のみ実行
     checklocalkey();
-    //const intervalId = window.setInterval(loop, 1000);
-    // クリーンアップ関数でタイマーをクリアする
-    //return () => clearInterval(intervalId);
   }, []);
-
-  useEffect(() => {
-    console.log('Dark theme state has changed:', theme_Bool);
-    // 値が変わった時に行いたい処理をここに記述
-  }, [theme_Bool]); // isDarkThemeが変わるたびにこのuseEffectが実行される
 
   function checklocalkey() {
     // キーの存在を確認する
@@ -86,8 +77,6 @@ export default function Page() {
   }
 
   useEffect(() => {
-    //１秒毎に実行
-    // 今までのloopと同じ
     const intervalId = window.setInterval(() => {
       if (!isResting_Bool) {
         settime_Num((time_Num) => {
@@ -178,10 +167,6 @@ export default function Page() {
 
           <button className={styles.clear_button} onClick={cleartime}>
             ClearTime
-          </button>
-
-          <button className={styles.dark_mode_button} onClick={toggleDarkMode}>
-            {styles.theme_Bool ? 'Light Mode' : 'Dark Mode'}
           </button>
         </div>
         <div className={styles.bot_container}>

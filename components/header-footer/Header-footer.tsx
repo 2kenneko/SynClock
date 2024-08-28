@@ -49,7 +49,7 @@ export default function Page() {
 
   return (
     <main>
-      <div>
+      <div className={theme_Bool ? `${styles.dark_mode}` : ''}>
         <header className={styles.header}>
           <div className={styles['header-left']}>
             <h1 className={styles['header-text']}>タイマーテスト</h1>
