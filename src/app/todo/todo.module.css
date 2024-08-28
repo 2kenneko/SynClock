@@ -12,6 +12,11 @@
   margin-top: 50px;
 }
 
+.text_container {
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+}
 .input {
   margin: 10px;
   padding: 10px;
@@ -46,13 +51,48 @@
 .ul {
   list-style-type: none;
   padding: 0;
+  display:flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 .li {
   margin: 10px 0;
   font-size: 20px;
   margin: 10px;
+
+  display: flex;
+  align-items: center;
+  
 }
+
+.li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 0.5s forwards;
+  width: 40%;
+}
+.dark_mode .li {
+  background-color: #3d3d43;
+}
+
+/* スライドアニメーション */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 .dark_mode .li {
   color: white;
 } 
@@ -67,11 +107,42 @@
 }
 
 
-
-
-
-
 .dark_mode .text {
   color: white;
   transition: background-color 0.3s ease;
+}
+
+
+
+/*
+_________ checkbox _________
+*/
+
+.checkbox {
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  margin: 4px;
+  border: 1px solid #8b98a5;
+  border-radius: 4px;
+}
+.checkbox:checked {
+  border: 1px solid #8b98a5;
+  background-color: #1d9bf0;
+}
+.checkbox:checked::before {
+  content: "";
+  display: block;
+  position: relative;
+  left: 7.4px;
+  top: 1px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.checkbox:focus-visible {
+  outline: 2px solid #1d9bf0;
+  outline-offset: 2px;
 }
