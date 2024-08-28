@@ -137,7 +137,18 @@ export default function Page() {
               </button>
             </div>
             <div className={styles.overlay}>
-              <Image src={landscape_screen.src} layout="responsive" width={1} height={1} alt="" loading="lazy" className={styles.landscape_screen} />
+              <Image src={landscape_screen.src}
+              width={100}
+              height={100}
+              alt="" 
+              loading="lazy" 
+              className={styles.landscape_screen} 
+              sizes="100%"
+              style={{
+                width: '100%',
+                height: 'auto',
+              }}
+              />
             </div>
           </div>
         </header>

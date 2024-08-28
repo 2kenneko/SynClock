@@ -103,7 +103,6 @@
 .running_stickman {
   width: 1vw;
   max-width: 200px;
-  position: relative;
   margin: -40px;
 }
 .dark_mode .running_stickman {
