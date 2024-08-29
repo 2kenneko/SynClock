@@ -1,6 +1,5 @@
 'use client';
-import Image from 'next/image';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './whatstudy.module.css';
 import { useRecoilState } from 'recoil';
@@ -10,8 +9,7 @@ export default function Page() {
   // SCRIPT SETUP
 
   let [task_Str, settask_Str] = useState<string>(''); //タスクの名前
-  let [istaskEnterd_Bool, setistaskEnterd_Bool] = useState<boolean>(false);
-  let [darktheme, setdarktheme] = useRecoilState(darkThemeState);
+  let [darktheme] = useRecoilState(darkThemeState);
   const whatstudy_locakkeyname_Str: string = 'whatstudy';
   const link_top: string = '/';
   const router = useRouter();
@@ -23,7 +21,6 @@ export default function Page() {
 
   function enterTask() {
     localStorage.setItem(whatstudy_locakkeyname_Str, task_Str);
-    istaskEnterd_Bool = true;
     router.push(link_top); //TOPページへ遷移
   }
 
