@@ -18,10 +18,12 @@ export default function Page() {
     document.title = "whatstudy";
   }, [])
 
-
+  /* ————————————————
+  *   TOPページへ遷移
+  ———————————————— */
   function enterTask() {
     localStorage.setItem(whatstudy_locakkeyname_Str, task_Str);
-    router.push(link_top); //TOPページへ遷移
+    router.push(link_top);
   }
 
   return (

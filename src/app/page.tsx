@@ -11,34 +11,55 @@ import running_stickman_link from '@/assets/images/running-stickman-transparency
 import { darkThemeState } from '~/components/header-footer/Header-footer';
 import { useRecoilState } from 'recoil';
 export default function Page() {
-  // SCRIPT SETUP
-  /* 変数定義のルール
-  - わかりやすい名前
-  - ＿の後は大文字
-  - 初期状態を保存しておく
-*/
+  /*
+   * —————————————— 変数定義のルール ——————————————
+   *     - わかりやすい名前
+   *     - ＿の後は大文字
+   *     - 初期状態の記述
+   *
+   * ———————————————— 変数の使用用途 ————————————————
+   *   time_Num           -> 時間保存
+   *   progress_Num       -> プログレスバーの進捗度
+   *   progress_count_Num -> プログレスバーが進むとカウントが進む
+   *   task_Str           -> タスクの名前
+   *   isResting_Bool     -> 休憩しているか
+   *   togglebtn_Bool     -> トグルボタンの状態
+   *   resttime_Num       -> 休憩時間
+   *   theme_Bool         -> ダークテーマ
+   * 
+   *   timeS -> 秒
+   *   timeM -> 分
+   *   timeH -> 時
+   *
+   * ———————————————— ローカルストレージのキーの名前 ————————————————
+   *   time -> 時間の保存
+   *   progress_count -> プログレスバーのカウントの保存
+   *   theme -> ダークテーマ
+   *   task -> 何を勉強しているか
+   *
+   */
 
-  const [task_Str, settask_Str] = useState<string>(''); //タスクの名前
-  let [time_Num, settime_Num] = useState<number>(0); //時間保存
-  const [isResting_Bool, setisResting_Bool] = useState<boolean>(false); //休憩しているか
-  let [progress_Num, setprogress_Num] = useState<number>(0); //プログレスバーの進捗度
-  const [togglebtn_Bool] = useState<boolean>(false); //トグルボタンの状態
-  let [progress_count_Num, setprogress_count_Num] = useState<number>(0); //プログレスバーが進むとカウントが進む
-  const [resttime_Num] = useState<number>(100); //休憩時間
-  //let [btn_hover_Bool, setbtn_hover_Bool] = useState<boolean>(false);
+  let [time_Num, settime_Num] = useState<number>(0);
+  let [progress_Num, setprogress_Num] = useState<number>(0);
+  let [progress_count_Num, setprogress_count_Num] = useState<number>(0);
+  let [theme_Bool] = useRecoilState(darkThemeState);
+  const [task_Str, settask_Str] = useState<string>('');
+  const [isResting_Bool, setisResting_Bool] = useState<boolean>(false);
+  const [togglebtn_Bool] = useState<boolean>(false);
+  const [resttime_Num] = useState<number>(100);
 
   const time_localkeyname_Str: string = 'time';
   const progress_count_localkeyname_Str: string = 'check-count';
   const theme_localkeyname_Str: string = 'dark_theme';
   const task_Str_localkeyname_Str: string = 'whatstudy';
 
-  let [theme_Bool] = useRecoilState(darkThemeState);
-
   let [timeS, settimeS] = useState<string>('00'); //秒
   let [timeM, settimeM] = useState<string>('00'); //分
   let [timeH, settimeH] = useState<string>('00'); //時
 
-  //タイトルに時間を表示
+  /*——————————————————————
+  *   タイトルに時間を表示
+  ——————————————————————*/
   useEffect(() => {
     const seconds = (time_Num % 60) + 1;
     const minutes = Math.floor(time_Num / 60) % 60;
@@ -49,11 +70,16 @@ export default function Page() {
     document.title = `${timeH}:${timeM}:${timeS}`;
   }, [time_Num]);
 
+  /*——————————————————————
+    最初に実行
+  ———————————————————————*/
   useEffect(() => {
-    //最初のみ実行
     checklocalkey();
   }, []);
 
+  /*  ——————————————————————
+    ローカルストレージを確認する
+  ———————————————————————  */
   function checklocalkey() {
     // キーの存在を確認する
     if (!localStorage.getItem(time_localkeyname_Str)) {
@@ -68,9 +94,8 @@ export default function Page() {
     if (!localStorage.getItem(task_Str_localkeyname_Str)) {
       localStorage.setItem(task_Str_localkeyname_Str, '');
     }
-
     settime_Num((time_Num) => {
-      time_Num = Number(localStorage.getItem(time_localkeyname_Str)); //タイマーをストレージから取得
+      time_Num = Number(localStorage.getItem(time_localkeyname_Str));
       return time_Num;
     });
     settask_Str((task_Str) => {
@@ -78,8 +103,11 @@ export default function Page() {
       return task_Str;
     });
   }
+
+  /*  ————————————————————
+        クリアボタン
+  —————————————————————  */
   function cleartime() {
-    //リセット
     localStorage.setItem(time_localkeyname_Str, '0');
     localStorage.setItem(progress_count_localkeyname_Str, '0');
 
@@ -98,8 +126,6 @@ export default function Page() {
         });
       }
     }, 1000);
-
-    // クリーンアップ関数
     return () => clearInterval(intervalId);
   }, [isResting_Bool]);
 
@@ -108,7 +134,7 @@ export default function Page() {
   }
 
   useEffect(() => {
-    //timeが更新されたときに実行
+    //timeが更新されたとき
     setprogress_Num((progress_Num) => {
       progress_Num = time_Num % 600;
 
@@ -134,7 +160,6 @@ export default function Page() {
           </p>
           <div className={styles.maincontent}>
             {!isResting_Bool && <Showtime time={time_Num} />}
-
             {isResting_Bool && (
               <div className={styles.maincontent_rest}>
                 <Resttime resttime_Num={resttime_Num} isRest_Bool={isResting_Bool} />
