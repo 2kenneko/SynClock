@@ -1,18 +1,16 @@
 // vueの index.vueと同じ
 
 "use client";
-import Image from "next/image";
-import { useEffect, useState, useRef, use } from "react";
+import { useEffect, useState } from "react";
 import styles from "./bot.module.css";
 import Showtime from "@/components/time-render/Showtime";
 export default function Page() {
-  let [bottime_Num, setbottime_Num] = useState<number>(
+  const [bottime_Num, setbottime_Num] = useState<number>(
     Math.floor(Math.random() * 10000)
   );
   let [progress_Num, setprogress_Num] = useState<number>(0);
-  let [cpuname_Str, setcpuname_Str] = useState<string>("");
+  const [cpuname_Str, setcpuname_Str] = useState<string>("");
 
-  const localkeyname_Str: string = "time";
   const cpuname_list_array = [
     "John Doe",
     "Jane Smith",
@@ -43,8 +41,8 @@ export default function Page() {
   useEffect(() => {
     //progress_Numに更新があったときに実行
 
-    setprogress_Num((progress_Num) => {
-      return (progress_Num = bottime_Num % 100); // 100sでリセット
+    setprogress_Num(() => {
+      return (bottime_Num % 100); // 100sでリセット
     });
   }, [bottime_Num]);
 

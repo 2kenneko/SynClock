@@ -1,11 +1,10 @@
 'use client';
 import Image from 'next/image';
-import { useEffect, useState, useRef, FC, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './header_footer.module.css';
 import { useRouter } from 'next/navigation';
 import landscape_screen from '@/assets/images/landscape-screen.gif';
 import { atom, useRecoilState } from 'recoil';
-import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import maxmize_icon from '@/assets/images/svgs/maximize.svg';
 import minimize_icon from '@/assets/images/svgs/minimize.svg';
 import darkmode_icon from '@/assets/images/svgs/darkmode.svg';
@@ -23,12 +22,9 @@ export default function Page() {
   const link_whatstudy: string = '/whatstudy';
 
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
-  let [isFullScreen_Bool, setisFullScreen_Bool] = useState<boolean>(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const handle = useFullScreenHandle();
 
   const theme_localkeyname_Str: string = 'dark_theme';
-  const fullscreen_localkeyname_Str: string = 'isfullscreen';
 
 
 // ____ 画面のフルスクリーン切り替え  ____

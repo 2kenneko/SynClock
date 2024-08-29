@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 import Showtime from '@/components/time-render/Showtime';
 type Props = {
@@ -8,11 +8,11 @@ type Props = {
 };
 
 const Resttime: React.FC<Props> = ({ resttime_Num, isRest_Bool }) => {
-  let [resttime_timeleft_Num, setresttime_timeleft_Num] = useState<number>(0);
+  const [resttime_timeleft_Num, setresttime_timeleft_Num] = useState<number>(0);
 
-  let [timeS, settimeS] = useState<string>("00"); //秒
-  let [timeM, settimeM] = useState<string>("00"); //分
-  let [timeH, settimeH] = useState<string>("00"); //時
+  const [timeS, settimeS] = useState<string>("00"); //秒
+  const [timeM, settimeM] = useState<string>("00"); //分
+  const [timeH, settimeH] = useState<string>("00"); //時
 
 
   useEffect(() => {

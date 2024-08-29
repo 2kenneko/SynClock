@@ -1,7 +1,7 @@
 // vueの index.vueと同じ
 'use client';
 import Image from 'next/image';
-import { useEffect, useState, useRef, SetStateAction } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './page.module.css';
 
 import Showtime from '@/components/time-render/Showtime';
@@ -18,21 +18,21 @@ export default function Page() {
   - 初期状態を保存しておく
 */
 
-  let [task_Str, settask_Str] = useState<string>(''); //タスクの名前
+  const [task_Str, settask_Str] = useState<string>(''); //タスクの名前
   let [time_Num, settime_Num] = useState<number>(0); //時間保存
-  let [isResting_Bool, setisResting_Bool] = useState<boolean>(false); //休憩しているか
+  const [isResting_Bool, setisResting_Bool] = useState<boolean>(false); //休憩しているか
   let [progress_Num, setprogress_Num] = useState<number>(0); //プログレスバーの進捗度
-  let [togglebtn_Bool, settogglebtn_Bool] = useState<Boolean>(false); //トグルボタンの状態
-  let [progress_count_Num, setprogress_count_Num] = useState<Number>(0); //プログレスバーが進むとカウントが進む
-  let [btn_hover_Bool, setbtn_hover_Bool] = useState<boolean>(false);
-  let [resttime_Num, setresttime_Num] = useState<number>(100); //休憩時間
+  const [togglebtn_Bool] = useState<boolean>(false); //トグルボタンの状態
+  let [progress_count_Num, setprogress_count_Num] = useState<number>(0); //プログレスバーが進むとカウントが進む
+  const [resttime_Num] = useState<number>(100); //休憩時間
+  //let [btn_hover_Bool, setbtn_hover_Bool] = useState<boolean>(false);
 
   const time_localkeyname_Str: string = 'time';
   const progress_count_localkeyname_Str: string = 'check-count';
   const theme_localkeyname_Str: string = 'dark_theme';
   const task_Str_localkeyname_Str: string = 'whatstudy';
 
-  let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
+  let [theme_Bool] = useRecoilState(darkThemeState);
 
   let [timeS, settimeS] = useState<string>('00'); //秒
   let [timeM, settimeM] = useState<string>('00'); //分
@@ -123,10 +123,6 @@ export default function Page() {
     });
   }, [time_Num]);
 
-  function hover_MouseOver(ishover: boolean) {
-    //ボタンにマウスが乗ったとき
-    btn_hover_Bool = ishover;
-  }
   return (
     <main id="app" className={theme_Bool ? `${styles.dark_mode}` : ''}>
       <div>
@@ -167,7 +163,7 @@ export default function Page() {
           </div>
         </div>
         <div className={styles.btn_main}>
-          <button className={`${styles.toggle_button} ${togglebtn_Bool ? 'hover' : ''}`} onMouseOver={() => hover_MouseOver(true)} onMouseLeave={() => hover_MouseOver(false)} onClick={toggleRest}>
+          <button className={`${styles.toggle_button} ${togglebtn_Bool ? 'hover' : ''}`} onClick={toggleRest}>
             {isResting_Bool ? 'REST' : 'studying'}
           </button>
 

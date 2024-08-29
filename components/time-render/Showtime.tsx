@@ -1,5 +1,4 @@
 "use client";
-import Head from 'next/head';
 import { useEffect, useState } from "react";
 
 type Props = {    
@@ -9,9 +8,9 @@ type Props = {
 const Clock: React.FC<Props> = ({ time }) => {
   // SCRIPT SETUP
 
-  let [timeS, settimeS] = useState<string>("00"); //秒
-  let [timeM, settimeM] = useState<string>("00"); //分
-  let [timeH, settimeH] = useState<string>("00"); //時
+  const [timeS, settimeS] = useState<string>("00"); //秒
+  const [timeM, settimeM] = useState<string>("00"); //分
+  const [timeH, settimeH] = useState<string>("00"); //時
 
   useEffect(() => {
     const seconds = time % 60;
