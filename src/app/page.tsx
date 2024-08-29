@@ -12,7 +12,7 @@ import { darkThemeState } from '~/components/header-footer/Header-footer';
 import { useRecoilState } from 'recoil';
 export default function Page() {
   // SCRIPT SETUP
-/* 変数定義のルール
+  /* 変数定義のルール
   - わかりやすい名前
   - ＿の後は大文字
   - 初期状態を保存しておく
@@ -34,25 +34,20 @@ export default function Page() {
 
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
 
+  let [timeS, settimeS] = useState<string>('00'); //秒
+  let [timeM, settimeM] = useState<string>('00'); //分
+  let [timeH, settimeH] = useState<string>('00'); //時
 
-  let [timeS, settimeS] = useState<string>("00"); //秒
-  let [timeM, settimeM] = useState<string>("00"); //分
-  let [timeH, settimeH] = useState<string>("00"); //時
-
+  //タイトルに時間を表示
   useEffect(() => {
     const seconds = (time_Num % 60) + 1;
     const minutes = Math.floor(time_Num / 60) % 60;
     const hours = Math.floor(time_Num / (60 * 60)) % 24;
-    // パディングして時間を更新
-    settimeS(seconds.toString().padStart(2, "0"));
-    settimeM(minutes.toString().padStart(2, "0"));
-    settimeH(hours.toString().padStart(2, "0"));
-
+    settimeS(seconds.toString().padStart(2, '0'));
+    settimeM(minutes.toString().padStart(2, '0'));
+    settimeH(hours.toString().padStart(2, '0'));
     document.title = `${timeH}:${timeM}:${timeS}`;
   }, [time_Num]);
-
-
-
 
   useEffect(() => {
     //最初のみ実行
@@ -122,7 +117,6 @@ export default function Page() {
         setprogress_count_Num((progress_count_Num) => {
           return Number(progress_count_Num) + 1;
         });
-
         localStorage.setItem(progress_count_localkeyname_Str, String(progress_count_Num));
       }
       return progress_Num;
@@ -133,16 +127,9 @@ export default function Page() {
     //ボタンにマウスが乗ったとき
     btn_hover_Bool = ishover;
   }
-
-  function toggleDarkMode() {
-    settheme_Bool(!theme_Bool);
-    localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
-  }
-
-
   return (
     <main id="app" className={theme_Bool ? `${styles.dark_mode}` : ''}>
-      <div >
+      <div>
         <div className={styles.timer_container}>
           <h1>タイマーテスト</h1>
           <p>今勉強していること：{task_Str}</p>
@@ -159,11 +146,11 @@ export default function Page() {
             )}
           </div>
 
-          <div style={{ position: 'relative'}}>
+          <div style={{ position: 'relative' }}>
             <Image
               src={running_stickman_link.src}
               width={1}
-              height={1} 
+              height={1}
               alt="stickman"
               loading="lazy"
               className={styles.running_stickman}
@@ -172,7 +159,6 @@ export default function Page() {
                 width: '100%',
                 height: 'auto',
               }}
-
             />
           </div>
 

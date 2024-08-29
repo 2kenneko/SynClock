@@ -7,7 +7,6 @@
 
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif, roboto;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
@@ -33,7 +32,7 @@
   color: blue;
   font-weight: bold;
   z-index: 10;
-  font-size: 10vw;
+  font-size: 12vw;
 }
 
 .progress_bar {

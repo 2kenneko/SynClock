@@ -141,7 +141,7 @@
   line-height: 20px;
   font-family: sans-serif;
   letter-spacing: 1px;
-
+  font-family: Arial;
   white-space: nowrap;
   overflow: hidden;
   font-size:max(13px,1vw);

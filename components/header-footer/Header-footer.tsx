@@ -14,14 +14,12 @@ export const darkThemeState = atom({
   key: 'dark_theme', // キーを指定
   default: false, // 初期値をfalseに設定（ダークテーマ無効）
 });
-
 export default function Page() {
   const router = useRouter();
   const link_top: string = '/';
   const link_todo: string = '/todo';
   const link_whatstudy: string = '/whatstudy';
 
-  //let [theme_Bool, settheme_Bool] = useState<boolean>(false);
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
   let [isFullScreen_Bool, setisFullScreen_Bool] = useState<boolean>(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -30,9 +28,23 @@ export default function Page() {
   const theme_localkeyname_Str: string = 'dark_theme';
   const fullscreen_localkeyname_Str: string = 'isfullscreen';
 
-  // ------------------------------------
-  // 画面のフルスクリーン切り替え
+
+// ____ 画面のフルスクリーン切り替え  ____
   useEffect(() => {
+
+//  __________  ローカルストレージ->テーマをロード時に変更  __________
+    console.log(localStorage.getItem(theme_localkeyname_Str))
+    if(JSON.parse(String(localStorage.getItem(theme_localkeyname_Str)))) {
+      settheme_Bool(true);
+      //  darktheme -> true
+    } else {
+      settheme_Bool(false);
+      //  darktheme -> false
+    }
+//_________________________________________________________________
+
+
+
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
     };
@@ -42,7 +54,6 @@ export default function Page() {
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
     };
   }, []);
-
   const toggleMaximize = () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch((err) => {
@@ -54,8 +65,10 @@ export default function Page() {
       }
     }
   };
-  // ------------------------------------
+// _____________________________________
 
+
+// ________ リンク先へ飛ぶ  ________
   function top_link() {
     router.push(link_top);
   }
@@ -65,8 +78,11 @@ export default function Page() {
   function whatstudy_link() {
     router.push(link_whatstudy);
   }
+//________________________________
 
-  //ダークモード切り替え
+
+
+//  ________ダークモード切り替え________
   function toggleDarkMode() {
     settheme_Bool((theme_Bool) => {
       theme_Bool = !theme_Bool;
@@ -74,6 +90,9 @@ export default function Page() {
       return theme_Bool;
     });
   }
+//  ____________________________________
+
+
 
   return (
     <main>
@@ -136,6 +155,10 @@ export default function Page() {
                 </div>
               </button>
             </div>
+            {/*——————————————————————
+                画面 横/縦 オーバーレイ
+              _______________________
+            */}
             <div className={styles.overlay}>
               <Image src={landscape_screen.src}
               width={100}
