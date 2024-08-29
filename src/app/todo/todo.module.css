@@ -79,17 +79,13 @@
   align-items: center;
 }
 
+
 .li {
   margin: 10px 0;
   font-size: 20px;
   margin: 10px;
-
   display: flex;
   align-items: center;
-  
-}
-
-.li {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -104,6 +100,22 @@
   width: 40%;
   /**/
 }
+
+
+.li_deleting {
+  animation: fadeOut 0.5s forwards;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
 .checked {
   box-shadow: 0 2px 4px #ffffff;
   background-color: #F1F1F1;
@@ -177,3 +189,10 @@ _________ checkbox _________
   outline: 2px solid #1d9bf0;
   outline-offset: 2px;
 }
+
+
+
+
+
+
+
