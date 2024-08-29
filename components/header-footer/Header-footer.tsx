@@ -6,8 +6,10 @@ import { useRouter } from 'next/navigation';
 import landscape_screen from '@/assets/images/landscape-screen.gif';
 import { atom, useRecoilState } from 'recoil';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
-import maxmize_icon from '@/assets/images/maximize.svg';
-import minimize_icon from '@/assets/images/minimize.svg';
+import maxmize_icon from '@/assets/images/svgs/maximize.svg';
+import minimize_icon from '@/assets/images/svgs/minimize.svg';
+import darkmode_icon from '@/assets/images/svgs/darkmode.svg';
+import lightmode_icon from '@/assets/images/svgs/lightmode.svg'
 
 //キーを保存
 export const darkThemeState = atom({
@@ -33,7 +35,6 @@ export default function Page() {
   useEffect(() => {
 
 //  __________  ローカルストレージ->テーマをロード時に変更  __________
-    console.log(localStorage.getItem(theme_localkeyname_Str))
     if(JSON.parse(String(localStorage.getItem(theme_localkeyname_Str)))) {
       settheme_Bool(true);
       //  darktheme -> true
@@ -131,15 +132,40 @@ export default function Page() {
                 </button>
               </div>
 
+              {/*—————————————————————————
+                    Dark / Light modeボタン 
+                  ________________________
+              */}
+
               <button className={styles.menu_link} onClick={toggleDarkMode}>
+
+              {theme_Bool ? (
+                ''
+                ) : 
+                <div className={styles.icon_container}>
+                <Image src={lightmode_icon.src} width={20} height={20} alt="" loading="lazy" className={styles.icon} />
+              </div>
+                }
                 <span className={styles.lable}>{theme_Bool ? 'Light Mode' : 'Dark Mode'}</span>
+                {theme_Bool ? (
+                    <div className={styles.icon_container}>
+                      <Image src={darkmode_icon.src} width={20} height={20} alt="" loading="lazy" className={styles.icon} />
+                    </div>
+                ) : ''}
               </button>
 
-              <button className={styles.menu_link} onClick={toggleMaximize}>
+
+
+
+
+
+
+
                 {/*——————————————————————
                     最大/最小切り替えボタン 
                   _______________________
                 */}
+              <button className={styles.menu_link} onClick={toggleMaximize}>
                 <div>
                   {isFullscreen ? (
                     <div className={styles.icon_container}>
