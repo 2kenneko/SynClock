@@ -56,7 +56,6 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
   background-color: #e74c3c;
   margin: 20px;
 }
@@ -103,6 +102,13 @@
   transform: translateX(-100%);
   animation: slideIn 0.5s forwards;
   width: 40%;
+  /**/
+}
+.checked {
+  box-shadow: 0 2px 4px #ffffff;
+  background-color: #F1F1F1;
+  transition: background-color 0.3s ease;
+  transition: box-shadow 0.2s ease;
 }
 .dark_mode .li {
   background-color: #3d3d43;
@@ -128,6 +134,7 @@
 .li .button {
   margin-left: 20px;
   padding: 5px 10px;
+  
 }
 
 

@@ -9,6 +9,7 @@ type Todo = {
   id: number;
   text: string;
   completed: boolean;
+  
 };
 
 export default function Page() {
@@ -65,13 +66,7 @@ export default function Page() {
         <h1 className={styles.text}>TODO List</h1>
 
         <div>
-          <input
-            className={styles.input}
-            placeholder="Enter a TODO"
-            type="text"
-            value={newTodo}
-            onChange={(e) => setNewTodo(e.target.value)}
-          />
+          <input className={styles.input} placeholder="Enter a TODO" type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
           <button className={styles.button} onClick={handleAddTodo}>
             Add
           </button>
@@ -83,12 +78,7 @@ export default function Page() {
       <ul className={styles.ul}>
         {todos.map((todo) => (
           <li key={todo.id} className={styles.li}>
-            <input
-              className={styles.checkbox}
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => handleToggleTodo(todo.id)}
-            />
+            <input className={styles.checkbox} type="checkbox" checked={todo.completed} onChange={() => handleToggleTodo(todo.id)} />
             <span className={styles.span} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
               {todo.text}
             </span>
