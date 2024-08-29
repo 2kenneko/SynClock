@@ -10,7 +10,6 @@ type Todo = {
   text: string;
   completed: boolean;
   isdeleting: boolean;
-  
 };
 
 export default function Page() {
@@ -50,10 +49,9 @@ export default function Page() {
 
   const handleDeleteTodo = (id: number) => {
     setTodos(todos.map((todo) => (todo.id === id ? { ...todo, isdeleting: !todo.isdeleting } : todo)));
-    setTimeout(function(){
+    setTimeout(function () {
       setTodos(todos.filter((todo) => todo.id !== id));
-    },450);
-   
+    }, 450);
   };
 
   // タスクを全てクリア
@@ -83,8 +81,8 @@ export default function Page() {
       </div>
       <ul className={styles.ul}>
         {todos.map((todo) => (
-          <li key={todo.id} className={`${styles.li} ${todo.isdeleting ? styles.li_deleting :''}`} >
-            <input className={styles.checkbox} type="checkbox" checked={todo.completed} onChange={() => handleToggleTodo(todo.id)} />
+          <li key={todo.id} className={`${styles.li} ${todo.completed ? styles.li_checked : ''} ${todo.isdeleting ? styles.li_deleting : ''}`}>
+            <input className={styles.checkbox} type="checkbox" checked={todo.completed} onChange={() => handleToggleTodo(todo.id)} ></input>
             <span className={styles.span} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
               {todo.text}
             </span>

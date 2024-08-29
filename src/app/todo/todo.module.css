@@ -113,7 +113,7 @@
   }
 }
 
-.checked {
+.li_checked {
   box-shadow: 0 2px 4px #ffffff;
   background-color: #F1F1F1;
   transition: background-color 0.3s ease;
