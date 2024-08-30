@@ -8,7 +8,7 @@ import Showtime from '@/components/time-render/Showtime';
 import Resttime from '@/components/time-render/Resttime';
 import Bot from '@/components/Bot';
 import running_stickman_link from '@/assets/images/running-stickman-transparency.gif';
-import { darkThemeState } from '~/components/header-footer/Header-footer';
+import { darkThemeState } from '@/components/header-footer/Header';
 import { useRecoilState } from 'recoil';
 export default function Page() {
   /*

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './whatstudy.module.css';
 import { useRecoilState } from 'recoil';
-import { darkThemeState } from '~/components/header-footer/Header-footer';
+import { darkThemeState } from '@/components/header-footer/Header';
 
 export default function Page() {
   // SCRIPT SETUP

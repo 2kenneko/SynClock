@@ -2,7 +2,8 @@
 //Vue.js のDefaultと同じ
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Header_footer from '@/components/header-footer/Header-footer';
+import Header from '@/components/header-footer/Header';
+import Footer from '@/components/header-footer/Footer';
 import { RecoilRoot } from 'recoil';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -17,12 +18,11 @@ export default function RootLayout({
       {/* Vue.jsでは<nuxt/>と同じ */}
       <meta name="Clockshare_React" content="" />
       <body className={inter.className}>
-        <div>
           <RecoilRoot>
-            <Header_footer />
+            <Header />
             {children}
+            <Footer />
           </RecoilRoot>
-        </div>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import styles from './todo.module.css';
 import { useRecoilState } from 'recoil';
-import { darkThemeState } from '~/components/header-footer/Header-footer';
+import { darkThemeState } from '@/components/header-footer/Header';
 
 type Todo = {
   id: number;
@@ -15,7 +15,7 @@ type Todo = {
 export default function Page() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState<string>('');
-  let [darktheme, setdarktheme] = useRecoilState(darkThemeState);
+  let [darktheme] = useRecoilState(darkThemeState);
 
   // ページが読み込まれたときにlocalStorageからTODOリストを読み込む
   useEffect(() => {
