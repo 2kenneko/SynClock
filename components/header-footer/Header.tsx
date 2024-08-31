@@ -165,7 +165,7 @@ export default function Page() {
                   ) : (
                     <div className={styles.icon_container}>
                       <Image src={maxmize_icon.src} width={20} height={20} alt="" loading="lazy" className={styles.icon} />
-                      maxmize
+                      maximize
                     </div>
                   )}
                 </div>
