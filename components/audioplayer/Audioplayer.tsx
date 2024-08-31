@@ -40,6 +40,7 @@ export default function Page() {
   return (
     <Draggable
     bounds="parent"
+    cancel={`.${styles.audioplayer}`} // Prevent child elements from being draggable
     >
     <div
       style={{
