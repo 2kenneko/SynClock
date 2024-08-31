@@ -20,6 +20,7 @@ export default function Page() {
   const link_top: string = '/';
   const link_todo: string = '/todo';
   const link_whatstudy: string = '/whatstudy';
+  const link_character: string = '/character';
 
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -55,14 +56,10 @@ export default function Page() {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch((err) => {
         console.error(`フルスクリーンモードに切り替えられませんでした: ${err.message}`);
-        alert('フルスクリーンモードに切り替えられませんでした。');
       });
     } else {
       if (document.exitFullscreen) {
-        document.exitFullscreen().catch((err) => {
-          console.error(`フルスクリーンモードを終了できませんでした: ${err.message}`);
-          alert('フルスクリーンモードを終了できませんでした。');
-        });
+        document.exitFullscreen();
       }
     }
   };
@@ -78,6 +75,9 @@ export default function Page() {
   }
   function whatstudy_link() {
     router.push(link_whatstudy);
+  }
+  function character_link() {
+    router.push(link_character);
   }
 //________________________________
 
@@ -100,7 +100,7 @@ export default function Page() {
       <div className={theme_Bool ? `${styles.dark_mode}` : ''}>
         <header className={styles.header}>
           <div className={styles['header-left']}>
-            <h1 className={styles.header_text}>タイマーテスト</h1>
+            <h1 className={styles['header-text']}>タイマーテスト</h1>
           </div>
           <div className={styles['header-right']}>
             <div className={styles['header-btn']}>
@@ -120,6 +120,15 @@ export default function Page() {
               <div>
                 <button onClick={todo_link} className={styles.menu_link}>
                   <span className={styles.lable}>TODO</span>
+                </button>
+              </div>
+              {/*——————————————————————
+                    Characterボタン 
+                  _____________________
+              */}
+              <div>
+                <button onClick={character_link} className={styles.menu_link}>
+                  <span className={styles.lable}>CHARACTER</span>
                 </button>
               </div>
               {/*——————————————————————
@@ -169,7 +178,7 @@ export default function Page() {
                   ) : (
                     <div className={styles.icon_container}>
                       <Image src={maxmize_icon.src} width={20} height={20} alt="" loading="lazy" className={styles.icon} />
-                      maximize
+                      maxmize
                     </div>
                   )}
                 </div>
