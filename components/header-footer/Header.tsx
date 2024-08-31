@@ -28,7 +28,6 @@ export default function Page() {
   const link_character: string = '/character';
 
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
-  //let [isopenwin_Bool, setisopenwin_Bool] = useRecoilState(darkThemeState);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const theme_localkeyname_Str: string = 'dark_theme';

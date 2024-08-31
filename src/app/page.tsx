@@ -7,13 +7,13 @@ import Showtime from '@/components/time-render/Showtime';
 import Resttime from '@/components/time-render/Resttime';
 import Bot from '@/components/Bot';
 import running_stickman_link from '@/assets/images/running-stickman-transparency.gif';
-import { darkThemeState } from '@/components/header-footer/Header';
+import { audio_modalwindow, darkThemeState } from '@/components/header-footer/Header';
 import { useRecoilState } from 'recoil';
 
 
 
 export default function Page() {
-   /*
+  /*
    * —————————————— 変数定義のルール ——————————————
    *     - わかりやすい名前
    *     - ＿の後は大文字
@@ -44,6 +44,7 @@ export default function Page() {
   let [progress_Num, setprogress_Num] = useState<number>(0);
   let [progress_count_Num, setprogress_count_Num] = useState<number>(0);
   let [theme_Bool] = useRecoilState(darkThemeState);
+  let [isopenwin_Bool] = useRecoilState(audio_modalwindow);
   const [task_Str, settask_Str] = useState<string>('');
   const [isResting_Bool, setisResting_Bool] = useState<boolean>(false);
   const [togglebtn_Bool] = useState<boolean>(false);
@@ -54,6 +55,8 @@ export default function Page() {
   const theme_localkeyname_Str: string = 'dark_theme';
   const task_Str_localkeyname_Str: string = 'whatstudy';
   const selectedImage_localkeyname_Str: string = 'Selected_image'; // 追加
+  const isopenaudiowindow_Str : string = 'open_modal_window';
+
 
   let [timeS, settimeS] = useState<string>('00'); //秒
   let [timeM, settimeM] = useState<string>('00'); //分
@@ -106,6 +109,9 @@ export default function Page() {
     }
     if (!localStorage.getItem(task_Str_localkeyname_Str)) {
       localStorage.setItem(task_Str_localkeyname_Str, '');
+    }
+    if (!localStorage.getItem(isopenaudiowindow_Str)) {
+      localStorage.setItem(isopenaudiowindow_Str, String(isopenwin_Bool));
     }
     settime_Num(Number(localStorage.getItem(time_localkeyname_Str)));
     settask_Str(String(localStorage.getItem(task_Str_localkeyname_Str)));

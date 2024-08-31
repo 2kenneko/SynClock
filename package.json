@@ -12,6 +12,7 @@
     "next": "14.2.6",
     "react": "^18",
     "react-dom": "^18",
+    "react-draggable": "^4.4.6",
     "react-full-screen": "^1.1.1",
     "react-h5-audio-player": "^3.9.3",
     "react-router-dom": "^6.26.1",
