@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import styles from './header_footer.module.css';
+import styles from './header.module.css';
 import { useRouter } from 'next/navigation';
 import landscape_screen from '@/assets/images/landscape-screen.gif';
 import { atom, useRecoilState } from 'recoil';
