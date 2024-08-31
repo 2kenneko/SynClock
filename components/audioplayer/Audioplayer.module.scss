@@ -1,0 +1,16 @@
+.audioplayer_parent {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+  width: 330px;
+}
+
+.audiocontainer {
+  width: 300px;
+}
+.closebtn {
+  display: flex;
+  justify-content: flex-end
+}
+
+.audioplayer {
+  box-shadow: 0 0 0px 0 #00000000 !important;
+}

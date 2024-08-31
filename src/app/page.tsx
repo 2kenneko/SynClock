@@ -10,6 +10,8 @@ import Bot from '@/components/Bot';
 import running_stickman_link from '@/assets/images/running-stickman-transparency.gif';
 import { darkThemeState } from '@/components/header-footer/Header';
 import { useRecoilState } from 'recoil';
+
+
 export default function Page() {
   /*
    * —————————————— 変数定義のルール ——————————————

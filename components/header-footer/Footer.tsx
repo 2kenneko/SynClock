@@ -3,7 +3,6 @@ import { darkThemeState } from './Header';
 import styles from './footer.module.scss';
 import { useRecoilState } from 'recoil';
 
-
 export default function Page() {
 
   let [theme_Bool] = useRecoilState(darkThemeState);

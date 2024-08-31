@@ -15,6 +15,11 @@ export const darkThemeState = atom({
   key: 'dark_theme', // キーを指定
   default: false, // 初期値をfalseに設定（ダークテーマ無効）
 });
+//  オーディオ用のモーダルウィンドウの表示
+export const audio_modalwindow = atom({
+  key: 'audio_window', // キーを指定
+  default: false, // 初期値をfalseに設定（ダークテーマ無効）
+});
 export default function Page() {
   const router = useRouter();
   const link_top: string = '/';
@@ -22,6 +27,7 @@ export default function Page() {
   const link_whatstudy: string = '/whatstudy';
 
   let [theme_Bool, settheme_Bool] = useRecoilState(darkThemeState);
+  //let [isopenwin_Bool, setisopenwin_Bool] = useRecoilState(darkThemeState);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const theme_localkeyname_Str: string = 'dark_theme';
@@ -29,7 +35,6 @@ export default function Page() {
 
 // ____ 画面のフルスクリーン切り替え  ____
   useEffect(() => {
-
 //  __________  ローカルストレージ->テーマをロード時に変更  __________
     if(JSON.parse(String(localStorage.getItem(theme_localkeyname_Str)))) {
       settheme_Bool(true);

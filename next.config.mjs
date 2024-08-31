@@ -9,6 +9,16 @@ const nextConfig = {
   reactStrictMode: false, //２回実行されるのを防ぐ
   webpack(config, options) {
     config.resolve.alias['@'] = path.join(__dirname, 'src');
+
+    config.module.rules.push({
+      test: /\.(mp3)$/,
+      type: "asset/resource",
+      generator: {
+        filename: "static/chunks/[path][name].[hash][ext]",
+      },
+    });
+
+    
     return config;
   },
 };
