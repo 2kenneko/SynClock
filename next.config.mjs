@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false, //２回実行されるのを防ぐ
-  webpack(config, options) {
+  webpack(config) {
     config.resolve.alias['@'] = path.join(__dirname, 'src');
 
     config.module.rules.push({
@@ -17,10 +17,13 @@ const nextConfig = {
         filename: "static/chunks/[path][name].[hash][ext]",
       },
     });
-
     
     return config;
   },
+
+  future: { 
+    webpack5: true, 
+  }, 
 };
 
 export default nextConfig;
