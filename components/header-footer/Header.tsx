@@ -96,7 +96,7 @@ export default function Page() {
       <div className={theme_Bool ? `${styles.dark_mode}` : ''}>
         <header className={styles.header}>
           <div className={styles['header-left']}>
-            <h1 className={styles['header-text']}>タイマーテスト</h1>
+            <h1 className={styles.header_text}>タイマーテスト</h1>
           </div>
           <div className={styles['header-right']}>
             <div className={styles['header-btn']}>

@@ -26,10 +26,17 @@
   align-items: center;
   justify-content: center;
 }
-.header-text {
+.header_text {
   white-space: nowrap;
   font-size: max(2vw, 25px);
+  visibility: visible;
 }
+@media screen and (max-width:750px){
+  .header_text {
+    display:none;
+  }
+}
+
 
 /*——————————————————————————
 //   最小/最大切り替えボタン
