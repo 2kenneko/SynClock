@@ -3,7 +3,6 @@ import { darkThemeState } from './Header';
 import styles from './footer.module.scss';
 import { useRecoilState } from 'recoil';
 
-//キーを保存
 
 export default function Page() {
 
