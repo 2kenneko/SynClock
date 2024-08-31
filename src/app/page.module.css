@@ -164,7 +164,11 @@ img:has(.dark_mode) {
   background-color: #555555;
 }
 
-
+.selected_image {
+  position: fixed;
+  bottom: 0%;
+  z-index: 101;
+}
 
 
 

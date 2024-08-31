@@ -1,4 +1,3 @@
-// vueの index.vueと同じ
 'use client';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -12,8 +11,9 @@ import { darkThemeState } from '@/components/header-footer/Header';
 import { useRecoilState } from 'recoil';
 
 
+
 export default function Page() {
-  /*
+   /*
    * —————————————— 変数定義のルール ——————————————
    *     - わかりやすい名前
    *     - ＿の後は大文字
@@ -40,7 +40,6 @@ export default function Page() {
    *   task -> 何を勉強しているか
    *
    */
-
   let [time_Num, settime_Num] = useState<number>(0);
   let [progress_Num, setprogress_Num] = useState<number>(0);
   let [progress_count_Num, setprogress_count_Num] = useState<number>(0);
@@ -54,10 +53,13 @@ export default function Page() {
   const progress_count_localkeyname_Str: string = 'check-count';
   const theme_localkeyname_Str: string = 'dark_theme';
   const task_Str_localkeyname_Str: string = 'whatstudy';
+  const selectedImage_localkeyname_Str: string = 'Selected_image'; // 追加
 
   let [timeS, settimeS] = useState<string>('00'); //秒
   let [timeM, settimeM] = useState<string>('00'); //分
   let [timeH, settimeH] = useState<string>('00'); //時
+
+  const [selectedImage, setSelectedImage] = useState<string | null>(null); // 追加
 
   /*——————————————————————
   *   タイトルに時間を表示
@@ -79,11 +81,20 @@ export default function Page() {
     checklocalkey();
   }, []);
 
+  /*——————————————————————
+    ローカルストレージからSelected_imageを取得
+  ———————————————————————*/
+  useEffect(() => {
+    const storedImage = localStorage.getItem(selectedImage_localkeyname_Str);
+    if (storedImage) {
+      setSelectedImage(storedImage);
+    }
+  }, []);
+
   /*  ——————————————————————
     ローカルストレージを確認する
   ———————————————————————  */
   function checklocalkey() {
-    // キーの存在を確認する
     if (!localStorage.getItem(time_localkeyname_Str)) {
       localStorage.setItem(time_localkeyname_Str, String(time_Num));
     }
@@ -96,14 +107,8 @@ export default function Page() {
     if (!localStorage.getItem(task_Str_localkeyname_Str)) {
       localStorage.setItem(task_Str_localkeyname_Str, '');
     }
-    settime_Num((time_Num) => {
-      time_Num = Number(localStorage.getItem(time_localkeyname_Str));
-      return time_Num;
-    });
-    settask_Str((task_Str) => {
-      task_Str = String(localStorage.getItem(task_Str_localkeyname_Str));
-      return task_Str;
-    });
+    settime_Num(Number(localStorage.getItem(time_localkeyname_Str)));
+    settask_Str(String(localStorage.getItem(task_Str_localkeyname_Str)));
   }
 
   /*  ————————————————————
@@ -113,9 +118,9 @@ export default function Page() {
     localStorage.setItem(time_localkeyname_Str, '0');
     localStorage.setItem(progress_count_localkeyname_Str, '0');
 
-    settime_Num((time_Num = 0));
-    setprogress_Num((progress_Num = 0));
-    setprogress_count_Num((progress_count_Num = 0));
+    settime_Num(0);
+    setprogress_Num(0);
+    setprogress_count_Num(0);
   }
 
   useEffect(() => {
@@ -123,7 +128,7 @@ export default function Page() {
       if (!isResting_Bool) {
         settime_Num((time_Num) => {
           time_Num = time_Num + 1;
-          localStorage.setItem(time_localkeyname_Str, String(time_Num)); //時間の保存
+          localStorage.setItem(time_localkeyname_Str, String(time_Num));
           return time_Num;
         });
       }
@@ -136,15 +141,11 @@ export default function Page() {
   }
 
   useEffect(() => {
-    //timeが更新されたとき
     setprogress_Num((progress_Num) => {
       progress_Num = time_Num % 600;
 
       if (progress_count_Num === 599) {
-        // プログレスバーがマックスになったとき
-        setprogress_count_Num((progress_count_Num) => {
-          return Number(progress_count_Num) + 1;
-        });
+        setprogress_count_Num((progress_count_Num) => progress_count_Num + 1);
         localStorage.setItem(progress_count_localkeyname_Str, String(progress_count_Num));
       }
       return progress_Num;
@@ -198,6 +199,15 @@ export default function Page() {
             ClearTime
           </button>
         </div>
+
+        {/* Selected_imageが存在する場合に表示 */}
+        {selectedImage && (
+          <div className={styles.selected_image}>
+            <h2>Selected Image</h2>
+            <Image src={selectedImage} alt="Selected" width={200} height={200} />
+          </div>
+        )}
+
         <div className={styles.bot_container}>
           <Bot />
           <Bot />
