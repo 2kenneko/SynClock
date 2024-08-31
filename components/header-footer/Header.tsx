@@ -55,10 +55,14 @@ export default function Page() {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch((err) => {
         console.error(`フルスクリーンモードに切り替えられませんでした: ${err.message}`);
+        alert('フルスクリーンモードに切り替えられませんでした。');
       });
     } else {
       if (document.exitFullscreen) {
-        document.exitFullscreen();
+        document.exitFullscreen().catch((err) => {
+          console.error(`フルスクリーンモードを終了できませんでした: ${err.message}`);
+          alert('フルスクリーンモードを終了できませんでした。');
+        });
       }
     }
   };
