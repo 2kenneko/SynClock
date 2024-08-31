@@ -1,5 +1,5 @@
 'use client';
-import styles from './style.module.scss';
+import styles from './audioplayer.module.scss';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/src/styles.scss';
 import closebtn from '@/assets/images/svgs/close_btn.svg';
