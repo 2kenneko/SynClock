@@ -5,6 +5,7 @@ import styles from './page.module.scss';
 import { useRecoilState } from 'recoil';
 import Image from 'next/image';
 
+/*  画像のインポート */
 import character1 from '@/assets/images/neko.png';
 import character2 from '@/assets/images/dog.webp';
 
@@ -12,9 +13,11 @@ export default function Page() {
   let [theme_Bool] = useRecoilState(darkThemeState);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  const selectedimage_Str : string = "Selected_image";
+
   // コンポーネントがマウントされたときにローカルストレージから画像を読み込む
   useEffect(() => {
-    const storedImage = localStorage.getItem('Selected_image');
+    const storedImage = localStorage.getItem(selectedimage_Str);
     if (storedImage) {
       setSelectedImage(storedImage);
     }
@@ -23,12 +26,14 @@ export default function Page() {
   // 画像がクリックされたときに呼ばれる関数
   const handleImageClick = (imageUrl: string) => {
     setSelectedImage(imageUrl);
-    localStorage.setItem('Selected_image', imageUrl);
+    localStorage.setItem(selectedimage_Str, imageUrl);
   };
+
 
   return (
     <div className={`${styles.footer_container} ${theme_Bool ? styles.dark_mode : ''}`}>
       <h1 className={styles.text_h1}>ガチャ画面</h1>
+      <button onClick={() => handleImageClick('')}>unselect character</button>
       <div className={styles.character_container}>
 
       <div className={styles.character1}>
