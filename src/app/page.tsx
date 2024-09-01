@@ -4,12 +4,15 @@ import { useEffect, useState } from 'react';
 import styles from './page.module.css';
 import styles_btn from "@/components/styles/btn.module.scss";
 
-import Showtime from '@/components/time-render/Showtime';
+//import Showtime from '@/components/time-render/Showtime';
 import Resttime from '@/components/time-render/Resttime';
 import Bot from '@/components/Bot';
 import running_stickman_link from '@/assets/images/running-stickman-transparency.gif';
 import { audio_modalwindow, darkThemeState } from '@/components/header-footer/Header';
 import { useRecoilState } from 'recoil';
+
+
+import useTimeDisplay from "@/hooks/useTimeDisplay";
 
 
 
@@ -58,25 +61,10 @@ export default function Page() {
   const selectedImage_localkeyname_Str: string = 'Selected_image'; // 追加
   const isopenaudiowindow_Str : string = 'open_modal_window';
 
-
-  let [timeS, settimeS] = useState<string>('00'); //秒
-  let [timeM, settimeM] = useState<string>('00'); //分
-  let [timeH, settimeH] = useState<string>('00'); //時
+  const showtime = useTimeDisplay(time_Num);
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null); // 追加
 
-  /*——————————————————————
-  *   タイトルに時間を表示
-  ——————————————————————*/
-  useEffect(() => {
-    const seconds = (time_Num % 60) + 1;
-    const minutes = Math.floor(time_Num / 60) % 60;
-    const hours = Math.floor(time_Num / (60 * 60)) % 24;
-    settimeS(seconds.toString().padStart(2, '0'));
-    settimeM(minutes.toString().padStart(2, '0'));
-    settimeH(hours.toString().padStart(2, '0'));
-    document.title = `${timeH}:${timeM}:${timeS}`;
-  }, [time_Num]);
 
   /*——————————————————————
     最初に実行
@@ -94,6 +82,11 @@ export default function Page() {
       setSelectedImage(storedImage);
     }
   }, []);
+
+  //時間をタイトルに表示する
+  useEffect(()=> {
+    document.title = showtime;
+  },[time_Num])
 
   /*  ——————————————————————
     ローカルストレージを確認する
@@ -169,7 +162,7 @@ export default function Page() {
             check: {String(progress_count_Num)} time: {time_Num}
           </p>
           <div className={styles.maincontent}>
-            {!isResting_Bool && <Showtime time={time_Num} />}
+            {!isResting_Bool && <div>{showtime}</div>}
             {isResting_Bool && (
               <div className={styles.maincontent_rest}>
                 <Resttime resttime_Num={resttime_Num} isRest_Bool={isResting_Bool} />

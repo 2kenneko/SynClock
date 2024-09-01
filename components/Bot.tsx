@@ -3,11 +3,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./bot.module.css";
-import Showtime from "@/components/time-render/Showtime";
+// import Showtime from "@/components/time-render/Showtime";
+import useTimeDisplay from "~/hooks/useTimeDisplay";
 export default function Page() {
-  const [bottime_Num, setbottime_Num] = useState<number>(
-    Math.floor(Math.random() * 10000)
-  );
+  const [bottime_Num, setbottime_Num] = useState<number>(0);
+  const showtime = useTimeDisplay(bottime_Num);
   let [progress_Num, setprogress_Num] = useState<number>(0);
   const [cpuname_Str, setcpuname_Str] = useState<string>("");
 
@@ -26,12 +26,13 @@ export default function Page() {
 
   useEffect(() => {
     //最初のみ実行
+    setbottime_Num(Math.floor(Math.random() * 10000));  //ランダムな数字を生成
     const intervalId = window.setInterval(loop, 1000); // 1秒に1回実行
     progress_Num = 0;
     setcpuname_Str(
       cpuname_list_array[Math.floor(Math.random() * cpuname_list_array.length)]
     );
-    return () => clearInterval(intervalId); // クリーンアップ
+    return () => clearInterval(intervalId);
   }, []);
 
   function loop() {
@@ -51,7 +52,7 @@ export default function Page() {
       <div className="parent">
         <div className="CPU">{cpuname_Str}</div>
         <div className={styles.set_font_size}>
-          <Showtime time={bottime_Num} />
+          <div>{showtime}</div>
         </div>
 
         <div className={styles.progress_bar_wrapper}>
