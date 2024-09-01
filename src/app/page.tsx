@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import styles from './page.module.css';
+import styles_btn from "@/components/styles/btn.module.scss";
 
 import Showtime from '@/components/time-render/Showtime';
 import Resttime from '@/components/time-render/Resttime';
@@ -159,7 +160,7 @@ export default function Page() {
   }, [time_Num]);
 
   return (
-    <main id="app" className={theme_Bool ? `${styles.dark_mode}` : ''}>
+    <main id="app" className={theme_Bool ? `${styles.dark_mode} ${styles_btn.dark_mode}` : ''}>
       <div>
         <div className={styles.timer_container}>
           <h1>タイマーテスト</h1>
@@ -197,11 +198,11 @@ export default function Page() {
           </div>
         </div>
         <div className={styles.btn_main}>
-          <button className={`${styles.toggle_button} ${togglebtn_Bool ? 'hover' : ''}`} onClick={toggleRest}>
+          <button className={`${styles_btn.primary_btn} ${togglebtn_Bool ? 'hover' : ''}`} onClick={toggleRest}>
             {isResting_Bool ? 'REST' : 'studying'}
           </button>
 
-          <button className={styles.clear_button} onClick={cleartime}>
+          <button className={styles_btn.secondary_btn} onClick={cleartime}>
             ClearTime
           </button>
         </div>

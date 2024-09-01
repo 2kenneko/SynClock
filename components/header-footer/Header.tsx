@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import styles from './header.module.css';
+import styles_btn from '@/components/styles/btn.module.scss';
 import { useRouter } from 'next/navigation';
 import landscape_screen from '@/assets/images/landscape-screen.gif';
 import { atom, useRecoilState } from 'recoil';
@@ -101,20 +102,20 @@ export default function Page() {
 
   return (
     <main>
-      <div className={theme_Bool ? `${styles.dark_mode}` : ''}>
+      <div className={theme_Bool ? `${styles.dark_mode} ${styles_btn.dark_mode}` : ''}>
         <header className={styles.header}>
           <div className={styles['header-left']}>
             <h1 className={styles['header-text']}>タイマーテスト</h1>
           </div>
           <div className={styles['header-right']}>
-            <div className={styles['header-btn']}>
+            <div className={styles['header_btn_container']}>
               <div>
                 {/*————————————————————
                     TOPボタン 
                   _____________________
                 */}
-                <button onClick={top_link} className={styles.menu_link}>
-                  <span className={styles.lable}>TOP</span>
+                <button onClick={top_link} className={styles_btn.header_btn}>
+                  <span className={styles.label}>TOP</span>
                 </button>
               </div>
               {/*————————————————————
@@ -122,8 +123,8 @@ export default function Page() {
                   _____________________
               */}
               <div>
-                <button onClick={todo_link} className={styles.menu_link}>
-                  <span className={styles.lable}>TODO</span>
+                <button onClick={todo_link} className={styles_btn.header_btn}>
+                  <span className={styles.label}>TODO</span>
                 </button>
               </div>
               {/*——————————————————————
@@ -131,8 +132,8 @@ export default function Page() {
                   _____________________
               */}
               <div>
-                <button onClick={character_link} className={styles.menu_link}>
-                  <span className={styles.lable}>CHARACTER</span>
+                <button onClick={character_link} className={styles_btn.header_btn}>
+                  <span className={styles.label}>CHARACTER</span>
                 </button>
               </div>
               {/*——————————————————————
@@ -140,8 +141,8 @@ export default function Page() {
                   _____________________
               */}
               <div>
-                <button onClick={whatstudy_link} className={styles.menu_link}>
-                  <span className={styles.lable}>What study?</span>
+                <button onClick={whatstudy_link} className={styles_btn.header_btn}>
+                  <span className={styles.label}>What study?</span>
                 </button>
               </div>
 
@@ -150,7 +151,7 @@ export default function Page() {
                   ________________________
               */}
 
-              <button className={styles.menu_link} onClick={toggleDarkMode}>
+              <button className={styles_btn.header_btn} onClick={toggleDarkMode}>
 
               {theme_Bool ? (
                 ''
@@ -159,7 +160,7 @@ export default function Page() {
                 <Image src={lightmode_icon.src} width={20} height={20} alt="" loading="lazy" className={styles.icon} />
               </div>
                 }
-                <span className={styles.lable}>{theme_Bool ? 'Light Mode' : 'Dark Mode'}</span>
+                <span className={styles.label}>{theme_Bool ? 'Light Mode' : 'Dark Mode'}</span>
                 {theme_Bool ? (
                     <div className={styles.icon_container}>
                       <Image src={darkmode_icon.src} width={20} height={20} alt="" loading="lazy" className={styles.icon} />
@@ -172,7 +173,7 @@ export default function Page() {
                     最大/最小切り替えボタン 
                   _______________________
                 */}
-              <button className={styles.menu_link} onClick={toggleMaximize}>
+              <button className={styles_btn.header_btn} onClick={toggleMaximize}>
                 <div>
                   {isFullscreen ? (
                     <div className={styles.icon_container}>

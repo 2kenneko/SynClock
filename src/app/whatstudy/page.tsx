@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import styles from './whatstudy.module.css';
 import { useRecoilState } from 'recoil';
 import { darkThemeState } from '@/components/header-footer/Header';
+import styles_btn from "@/components/styles/btn.module.scss";
 
 export default function Page() {
   // SCRIPT SETUP
@@ -27,12 +28,12 @@ export default function Page() {
   }
 
   return (
-    <main className={darktheme ? `${styles.dark_mode}` : ''}>
+    <main className={darktheme ? `${styles.dark_mode} ${styles_btn.dark_mode}` : ''}>
       <div className={styles.main}>
         <h1 className={styles.h1}>今勉強するべきことはなんですか？</h1>
         <div>
           <input className={styles.input} placeholder="Enter a task" value={task_Str} onChange={(event) => settask_Str(event.target.value)} />
-          <button className={styles.btn} onClick={enterTask}>
+          <button className={styles_btn.primary_btn} onClick={enterTask}>
             <span>GO</span>
           </button>
         </div>

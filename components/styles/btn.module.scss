@@ -1,0 +1,89 @@
+/*
+ *    ボタンの見た目を設定するcss
+ *    使用する際は以下のプログラムを参考にしてくだい\
+ *    
+ *⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼
+ *    import styles_btn from '@/components/styles/btn.module.scss
+ *    
+ *    return( 
+ *    <div className=${styles_btn.dark_mode}` : ''}>
+ *      <button className={styles_btn.primary_btn> テキスト </button>
+ *    </div>
+ *    )
+ * ⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼
+*/
+
+// ![primary_btn preview](assets/Dev/images/primarybtn.webp)
+.primary_btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 10px;
+  background-color: #00c3ff;
+
+  &:hover {
+    background-color: #009ccc;
+  }
+}
+
+// ![secondary_btn preview](assets/Dev/images/secondarybtn.webp)
+.secondary_btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #e74c3c;
+
+  &:hover {
+    background-color: #c0392b;
+  }
+}
+
+.header_btn {
+  justify-content: center;
+  display: flex;
+  height: 2.25rem; /* 9 * 0.25rem */
+  width: max-content;
+  justify-content: center;
+  border-radius: 0.375rem; /* 6px */
+  padding: 1rem;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  border: none;
+  align-items: center;
+
+  &:hover {
+    background-color: #c1c1c2;
+    color: black;
+  }
+}
+
+/*
+* ダークモード
+*/
+.dark_mode {
+  .primary_btn {
+    background-color: #004d65;
+    color: #ffffff;
+  }
+  .secondary_btn {
+    background-color: #732219;
+  }
+  .header_btn {
+    background-color: #3d3d43;
+    color: white;
+
+    &:hover {
+      background-color: #5f5f69;
+      color: white;
+    }
+  }
+}

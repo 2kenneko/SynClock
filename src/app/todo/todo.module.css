@@ -25,52 +25,6 @@
   border: 1px solid #ddd;
 }
 
-
-.button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: #00c3ff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.button:hover {
-  background-color: #009ccc;
-}
-.dark_mode .button:hover {
-  background-color: #009ccc;
-}
-.dark_mode .button {
-  background-color: #004d65;
-  color: #ffffff;
-}
-
-
-.clear_button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #e74c3c;
-  margin: 20px;
-}
-.dark_mode .clear_button {
-  background-color: #732219;
-}
-
-.clear_button:hover {
-  background-color: #c0392b;
-}
-
-
-
-
-
 .ul {
   list-style-type: none;
   padding: 0;

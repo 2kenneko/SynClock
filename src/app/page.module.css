@@ -1,7 +1,10 @@
-
 /*
-フォントのインストール
+*   ボタンのCSSは @/components/styles/btn.module.scss に入っています
 */
+
+
+
+/*  フォントのインストール  */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
@@ -60,46 +63,6 @@
   align-items: center;
   justify-content: center;
 }
-
-.toggle_button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin-right: 10px;
-  background-color: #00c3ff;
-}
-
-.dark_mode .toggle_button {
-  background-color: #004d65;
-  color: #ffffff;
-}
-
-.clear_button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: #e74c3c;
-}
-.dark_mode .clear_button {
-  background-color: #732219;
-}
-
-.toggle_button:hover {
-  background-color: #009ccc;
-}
-
-.clear_button:hover {
-  background-color: #c0392b;
-}
-
 .running_stickman {
   width: 1vw;
   max-width: 200px;

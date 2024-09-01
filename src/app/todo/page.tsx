@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import styles from './todo.module.css';
 import { useRecoilState } from 'recoil';
 import { darkThemeState } from '@/components/header-footer/Header';
+import styles_btn from "@/components/styles/btn.module.scss";
 
 type Todo = {
   id: number;
@@ -65,16 +66,16 @@ export default function Page() {
   }, []);
 
   return (
-    <div className={darktheme ? `${styles.dark_mode}` : ''}>
+    <div className={darktheme ? `${styles.dark_mode} ${styles_btn.dark_mode}` : ''}>
       <div className={styles.text_container}>
         <h1 className={styles.text}>TODO List</h1>
 
         <div>
           <input className={styles.input} placeholder="Enter a TODO" type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
-          <button className={styles.button} onClick={handleAddTodo}>
+          <button className={styles_btn.primary_btn} onClick={handleAddTodo}>
             Add
           </button>
-          <button className={styles.clear_button} onClick={handleClearTodos}>
+          <button className={styles_btn.secondary_btn} onClick={handleClearTodos}>
             Clear All
           </button>
         </div>
@@ -86,7 +87,7 @@ export default function Page() {
             <span className={styles.span} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
               {todo.text}
             </span>
-            <button className={styles.button} onClick={() => handleDeleteTodo(todo.id)}>
+            <button className={styles_btn.secondary_btn} onClick={() => handleDeleteTodo(todo.id)}>
               Delete
             </button>
           </li>
