@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import styles from './header.module.css';
+import styles from './header.module.scss';
 import styles_btn from '@/components/styles/btn.module.scss';
 import { useRouter } from 'next/navigation';
 import landscape_screen from '@/assets/images/landscape-screen.gif';

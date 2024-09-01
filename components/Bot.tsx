@@ -2,7 +2,7 @@
 
 "use client";
 import { useEffect, useState } from "react";
-import styles from "./bot.module.css";
+import styles from "./bot.module.scss";
 // import Showtime from "@/components/time-render/Showtime";
 import useTimeDisplay from "~/hooks/useTimeDisplay";
 export default function Page() {

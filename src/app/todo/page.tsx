@@ -1,9 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import styles from './todo.module.css';
-import { useRecoilState } from 'recoil';
-import { darkThemeState } from '@/components/header-footer/Header';
+import styles from './todo.module.scss';
 import styles_btn from "@/components/styles/btn.module.scss";
 
 type Todo = {
@@ -16,7 +14,6 @@ type Todo = {
 export default function Page() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState<string>('');
-  let [darktheme] = useRecoilState(darkThemeState);
 
   // ページが読み込まれたときにlocalStorageからTODOリストを読み込む
   useEffect(() => {
@@ -66,7 +63,7 @@ export default function Page() {
   }, []);
 
   return (
-    <div className={darktheme ? `${styles.dark_mode} ${styles_btn.dark_mode}` : ''}>
+    <div>
       <div className={styles.text_container}>
         <h1 className={styles.text}>TODO List</h1>
 

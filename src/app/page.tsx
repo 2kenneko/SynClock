@@ -153,7 +153,7 @@ export default function Page() {
   }, [time_Num]);
 
   return (
-    <main id="app" className={theme_Bool ? `${styles.dark_mode} ${styles_btn.dark_mode}` : ''}>
+    <main id="app" >
       <div>
         <div className={styles.timer_container}>
           <h1>タイマーテスト</h1>

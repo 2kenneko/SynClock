@@ -16,10 +16,16 @@ import { RecoilRoot, useRecoilState } from 'recoil';
  *  3.cssまたはscssで " .dark_modeと入力することでdark_modeにすると適用されるcssが作成できます "
  *  
 */
-import styles_btn from '@/components/styles/btn.module.scss';
-import styles_page from '@/src/app/page.module.scss';
-import styles_todo from "@/src/app/page.module.scss";
-import styles_whatstudy from "@/src/app/whatstudy/whatstudy.module.scss";
+import styles_1 from '@/components/styles/btn.module.scss';
+import styles_2 from '@/src/app/page.module.scss';
+import styles_3 from "@/components/bot.module.scss";
+import styles_4 from "@/src/app/whatstudy/whatstudy.module.scss";
+import styles_5 from '@/src/app/questionnaire/page.module.scss';
+import styles_6 from '@/src/app/character/page.module.scss';
+import styles_7 from '@/components/header-footer/footer.module.scss';
+import styles_8 from '@/components/header-footer/header.module.scss';
+import styles_9 from '@/components/audioplayer/audioplayer.module.scss';
+import styles_10 from '@/src/app/todo/todo.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -44,12 +50,20 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
       <meta name="Clockshare_React" content="" />
       <body className={`${inter.className} ${isdark_mode? 
         `
-        {/* ここにダークテーマを使用したいページをかく*/}
-        ${styles_btn.styles_btn}
-        ${styles_page.dark_mode}
-        ${styles_todo.dark_mode}
-        ${styles_whatstudy.dark_mode}
-        ${styles_todo.dark_mode}
+        {/* 
+          ここにダークテーマを使用したいページをかく
+          記述がない場合はlayout.tsxを参照してください
+        */}
+        ${styles_1.dark_mode}
+        ${styles_2.dark_mode}
+        ${styles_3.dark_mode}
+        ${styles_4.dark_mode}
+        ${styles_5.dark_mode}
+        ${styles_6.dark_mode}
+        ${styles_7.dark_mode}
+        ${styles_8.dark_mode}
+        ${styles_9.dark_mode}
+        ${styles_10.dark_mode}
         
         
         

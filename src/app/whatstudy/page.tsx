@@ -2,15 +2,12 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './whatstudy.module.scss';
-import { useRecoilState } from 'recoil';
-import { darkThemeState } from '@/components/header-footer/Header';
 import styles_btn from "@/components/styles/btn.module.scss";
 
 export default function Page() {
   // SCRIPT SETUP
 
   let [task_Str, settask_Str] = useState<string>(''); //タスクの名前
-  let [darktheme] = useRecoilState(darkThemeState);
   const whatstudy_locakkeyname_Str: string = 'whatstudy';
   const link_top: string = '/';
   const router = useRouter();
@@ -28,7 +25,7 @@ export default function Page() {
   }
 
   return (
-    <main className={darktheme ? `${styles.dark_mode} ${styles_btn.dark_mode}` : ''}>
+    <main>
       <div className={styles.main}>
         <h1 className={styles.h1}>今勉強するべきことはなんですか？</h1>
         <div>
