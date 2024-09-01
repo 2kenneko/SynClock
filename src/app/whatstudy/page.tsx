@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from './whatstudy.module.css';
+import styles from './whatstudy.module.scss';
 import { useRecoilState } from 'recoil';
 import { darkThemeState } from '@/components/header-footer/Header';
 import styles_btn from "@/components/styles/btn.module.scss";

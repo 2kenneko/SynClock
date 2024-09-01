@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import styles from './page.module.css';
+import styles from './page.module.scss';
 import styles_btn from "@/components/styles/btn.module.scss";
 
 //import Showtime from '@/components/time-render/Showtime';

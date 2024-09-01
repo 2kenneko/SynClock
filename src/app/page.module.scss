@@ -68,9 +68,7 @@
   max-width: 200px;
   margin: -40px;
 }
-.dark_mode .running_stickman {
-  filter: invert(1) brightness(2);
-}
+
 
 
 img:has(.dark_mode) {
@@ -86,6 +84,7 @@ img:has(.dark_mode) {
 /*  
   darkmodeの色を変更する
 */
+
 .dark_mode {
   background-color: #1e1e1e;
   color: #ffffff;
