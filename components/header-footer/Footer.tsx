@@ -1,11 +1,11 @@
 'use client';
-import { audio_modalwindow, darkThemeState } from './Header';
+import { audio_modalwindow } from './Header';
 import styles from './footer.module.scss';
 import { useRecoilState } from 'recoil';
+import styles_btn from '@/components/styles/btn.module.scss';
 
 export default function Page() {
 
-  let [theme_Bool] = useRecoilState(darkThemeState);
   let [isopenwin_Bool, setisopenwin_Bool] = useRecoilState(audio_modalwindow);
   const isopenaudiowindow_Str : string = 'open_modal_window';
 
@@ -22,9 +22,9 @@ export default function Page() {
 
 
   return (
-    <footer className={`${styles.footer_container} ${theme_Bool ? styles.dark_mode : ''}`}>
+    <footer className={`${styles.footer_container}`}>
       <p className={styles.footer_versionname}>ClockShare Beta version</p>
-      <button onClick={toggleaudiowindow}>toggle audio window</button>
+      <button onClick={toggleaudiowindow} className={styles_btn.primary_btn}>toggle audio window</button>
     </footer>
   );
 }
