@@ -23,7 +23,7 @@ const Resttime: React.FC<Props> = ({ resttime_Num, isRest_Bool }) => {
   //タイトル名を設定
   useEffect(()=> {
   document.title = showtime;
-  },[resttime_Num])
+  },[resttime_timeleft_Num])
 
 
   useEffect(() => {
