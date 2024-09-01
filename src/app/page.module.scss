@@ -85,45 +85,30 @@ img:has(.dark_mode) {
   darkmodeの色を変更する
 */
 
+
+
+
 .dark_mode {
   background-color: #1e1e1e;
   color: #ffffff;
   z-index: -99;
   transition: background-color 0.3s ease;
-}
-.dark_mode h1 {
-  color: #ffffff;
-}
-.dark_mode p {
-  color: #ffffff;
-}
 
-
-.dark_mode .clear-button {
-  background-color: #ff0000;
-}
-
-.dark_mode .progress_bar {
-  background-color: #ffffff;
-}
-
-.dark_mode .progress {
-  background-color: #ff0000;
-}
-
-.dark_mode_button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  background-color: #333333;
-}
-
-.dark_mode_button:hover {
-  background-color: #555555;
+  p {
+    color: #ffffff;
+  }
+  h1 {
+    color: #ffffff;
+  }
+  .clear-button {
+    background-color: #ff0000;
+  }
+  .progress_bar {
+    background-color: #ffffff;
+  }
+  .progress {
+    background-color: #ff0000;
+  }
 }
 
 .selected_image {

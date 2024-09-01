@@ -23,9 +23,10 @@
     border: none;
     outline: none;
     box-shadow: none;
-}
-.closebtn:hover {
-  background-color: #c42c1d;
+
+    &:hover {
+      background-color: #c42c1d;
+    }
 }
 
 .audioplayer {
