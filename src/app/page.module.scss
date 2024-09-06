@@ -71,9 +71,6 @@
 
 
 
-img:has(.dark_mode) {
-  filter: invert(100%);
-}
 .bot_container {
   display: flex;
   align-items: center;
@@ -93,7 +90,9 @@ img:has(.dark_mode) {
   color: #ffffff;
   z-index: -99;
   transition: background-color 0.3s ease;
-
+  img{
+    filter: invert(100%);
+  }
   p {
     color: #ffffff;
   }
