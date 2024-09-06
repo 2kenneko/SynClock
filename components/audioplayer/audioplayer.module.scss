@@ -2,16 +2,26 @@
 
 .audioplayer_parent {
   box-shadow: 0 2px 5px rgba(0,0,0,0.26);
-  width: 330px;
+  width: 560px;
+  height: 310px;
   position: fixed;
   background-color: #fefefe;
   border: 1px solid #888;
   user-select: none;
   -webkit-user-drag: none;
 }
+.dark_mode {
+  .audioplayer_parent {
+    background-color: #1e1e1e;
+  }
+  .closebtn_container {
+    background-color: #3d3d43;
+  }
+
+}
 
 .audiocontainer {
-  width: 325px;
+  // width: 325px;
   display: flex;
 }
 .closebtn_container {
@@ -47,3 +57,35 @@
   align-items: center;
 }
 
+.input_container {
+  display: flex;
+  margin: 2px;
+}
+
+.input {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+
+.input {
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.dark_mode {
+  .h1 {
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  .input {
+    background-color: #3d3d43;
+    border-color: #5f5f69;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  .input::placeholder {
+    color: #a4a4b5;
+  }
+}
