@@ -4,6 +4,7 @@ import { darkThemeState } from '~/components/header-footer/Header';
 import styles from './page.module.scss';
 import { useRecoilState } from 'recoil';
 import Image from 'next/image';
+import styles_btn from '@/components/styles/btn.module.scss';
 
 /*  画像のインポート */
 import character1 from '@/assets/images/neko.png';
@@ -33,7 +34,7 @@ export default function Page() {
   return (
     <div className={`${styles.footer_container} ${theme_Bool ? styles.dark_mode : ''}`}>
       <h1 className={styles.text_h1}>ガチャ画面</h1>
-      <button onClick={() => handleImageClick('')}>unselect character</button>
+      <button className={styles_btn.secondary_btn} onClick={() => handleImageClick('')}>unselect character</button>
       <div className={styles.character_container}>
 
       <div className={styles.character1}>
