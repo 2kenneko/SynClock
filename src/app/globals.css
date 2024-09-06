@@ -14,6 +14,7 @@ html, body {
   vertical-align:baseline;
   background:transparent;
   font-family: Avenir, Helvetica, Arial, sans-serif, roboto;
+  -webkit-text-size-adjust: 100%;
 }
 
 

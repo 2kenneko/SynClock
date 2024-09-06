@@ -15,7 +15,6 @@ import styles_btn from '@/components/styles/btn.module.scss';
 
 /*
  * ―――――――――――――――――――――――――――――――――――――――――
- *
  * use Library
  * - react-draggable        https://www.npmjs.com/package/react-draggable
  * - react-h5-audio-player  https://www.npmjs.com/package/react-h5-audio-player
@@ -82,7 +81,7 @@ export default function Page() {
         <div className={styles.audioplayer_parent}>
           <div className={styles.closebtn_container}>
             <button onClick={close} className={styles.closebtn}>
-              <Image src={closebtn.src} width={20} height={20} alt="" loading="lazy" className={styles.closebtn} />
+              <Image src={closebtn.src} width={20} height={20} alt="" loading="lazy" className={styles.close_icon} />
             </button>
           </div>
 
