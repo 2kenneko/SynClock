@@ -10,6 +10,7 @@ import maxmize_icon from '@/assets/images/svgs/maximize.svg';
 import minimize_icon from '@/assets/images/svgs/minimize.svg';
 import darkmode_icon from '@/assets/images/svgs/darkmode.svg';
 import lightmode_icon from '@/assets/images/svgs/lightmode.svg'
+import { useHotkeys } from 'react-hotkeys-hook';
 
 //キーを保存
 export const darkThemeState = atom({
@@ -84,6 +85,16 @@ export default function Page() {
   function character_link() {
     router.push(link_character);
   }
+//________________________________
+
+
+//______ ショートカットを追加 ________
+  useHotkeys('1', ()=> top_link());
+  useHotkeys('2', ()=> todo_link());
+  useHotkeys('3', ()=> whatstudy_link());
+  useHotkeys('4', ()=> character_link());
+  useHotkeys('5', ()=> toggleDarkMode());
+  useHotkeys('6', ()=> toggleMaximize());
 //________________________________
 
 
