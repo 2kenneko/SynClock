@@ -1,6 +1,6 @@
 'use client';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import './globals.scss';
 import Header, { darkThemeState } from '@/components/header-footer/Header';
 import Footer from '@/components/header-footer/Footer';
 import AudioPlayer from '@/components/audioplayer/Audioplayer';
@@ -45,8 +45,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
 
   return (
     <html lang="ja">
-      {/* Vue.jsでは<nuxt/>と同じ */}
-      <meta name="Clockshare_React" content="width=320, initial-scale=1.0 mixmum-scale=1.0 " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
       <body className={`${inter.className} ${isdark_mode? 
         `
         {/* 
@@ -75,3 +74,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
     </html>
   );
 }
+function useWindowScale(): { scale: any; } {
+  throw new Error('Function not implemented.');
+}
+
