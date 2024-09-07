@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import styles from './todo.module.scss';
 import styles_btn from "@/components/styles/btn.module.scss";
+import { useHotkeys } from 'react-hotkeys-hook';
 
 type Todo = {
   id: number;
@@ -27,6 +28,8 @@ export default function Page() {
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
+
+  useHotkeys('ctrl+enter', ()=> handleAddTodo()); //ショートカットを追加
 
   // タスクの追加
   const handleAddTodo = () => {

@@ -13,6 +13,7 @@ import { useRecoilState } from 'recoil';
 
 
 import useTimeDisplay from "@/hooks/useTimeDisplay";
+import { useHotkeys } from 'react-hotkeys-hook';
 
 
 
@@ -136,6 +137,9 @@ export default function Page() {
     return () => clearInterval(intervalId);
   }, [isResting_Bool]);
 
+  
+
+  useHotkeys('space', ()=> toggleRest()); //ショートカットを追加
   function toggleRest() {
     setisResting_Bool((prevIsResting_Bool) => !prevIsResting_Bool);
   }

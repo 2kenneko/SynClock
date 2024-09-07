@@ -74,7 +74,3 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
     </html>
   );
 }
-function useWindowScale(): { scale: any; } {
-  throw new Error('Function not implemented.');
-}
-
