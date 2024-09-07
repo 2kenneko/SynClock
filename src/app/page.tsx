@@ -203,7 +203,6 @@ export default function Page() {
         {/* Selected_imageが存在する場合に表示 */}
         {selectedImage && (
           <div className={styles.selected_image}>
-            <h2>Selected Image</h2>
             <Image src={selectedImage} alt="Selected" width={200} height={200} />
           </div>
         )}

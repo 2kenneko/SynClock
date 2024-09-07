@@ -88,7 +88,7 @@ export default function Page() {
           <div className={styles.input_container}>
             <input className={styles.input} type="text" value={youtubeUrl} onChange={handleInputChange} placeholder="Paste YouTube URL here" />
             <button className={styles_btn.header_btn} onClick={handleConvert}>
-              Embed
+              Enter
             </button>
           </div>
 
