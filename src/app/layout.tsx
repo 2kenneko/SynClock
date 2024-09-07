@@ -46,7 +46,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       {/* Vue.jsでは<nuxt/>と同じ */}
-      <meta name="Clockshare_React" content="" />
+      <meta name="Clockshare_React" content="width=320, initial-scale=1.0 mixmum-scale=1.0 " />
       <body className={`${inter.className} ${isdark_mode? 
         `
         {/* 

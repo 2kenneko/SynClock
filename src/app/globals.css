@@ -15,10 +15,9 @@ html, body {
   background:transparent;
   font-family: Avenir, Helvetica, Arial, sans-serif, roboto;
   -webkit-text-size-adjust: 100%;
-  zoom: 100%;
+  zoom: 1;
 }
 main {
-  width: ~~px;
   max-width: 100%;
   height: auto;
 }
