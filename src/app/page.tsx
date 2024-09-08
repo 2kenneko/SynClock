@@ -14,6 +14,7 @@ import { useRecoilState } from 'recoil';
 
 import useTimeDisplay from "@/hooks/useTimeDisplay";
 import { useHotkeys } from 'react-hotkeys-hook';
+import useLocalStorage from '~/hooks/useLocalStorage';
 
 
 
@@ -93,23 +94,34 @@ export default function Page() {
     ローカルストレージを確認する
   ———————————————————————  */
   function checklocalkey() {
-    if (!localStorage.getItem(time_localkeyname_Str)) {
-      localStorage.setItem(time_localkeyname_Str, String(time_Num));
-    }
-    if (!localStorage.getItem(progress_count_localkeyname_Str)) {
-      localStorage.setItem(progress_count_localkeyname_Str, String(progress_count_Num));
-    }
-    if (!localStorage.getItem(theme_localkeyname_Str)) {
-      localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
-    }
-    if (!localStorage.getItem(task_Str_localkeyname_Str)) {
-      localStorage.setItem(task_Str_localkeyname_Str, '');
-    }
-    if (!localStorage.getItem(isopenaudiowindow_Str)) {
-      localStorage.setItem(isopenaudiowindow_Str, String(isopenwin_Bool));
-    }
+    // if (!localStorage.getItem(time_localkeyname_Str)) {
+    //   localStorage.setItem(time_localkeyname_Str, String(time_Num));
+    // }
+    // if (!localStorage.getItem(progress_count_localkeyname_Str)) {
+    //   localStorage.setItem(progress_count_localkeyname_Str, String(progress_count_Num));
+    // }
+    // if (!localStorage.getItem(theme_localkeyname_Str)) {
+    //   localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
+    // }
+    // if (!localStorage.getItem(task_Str_localkeyname_Str)) {
+    //   localStorage.setItem(task_Str_localkeyname_Str, '');
+    // }
+    // if (!localStorage.getItem(isopenaudiowindow_Str)) {
+    //   localStorage.setItem(isopenaudiowindow_Str, String(isopenwin_Bool));
+    // }
+    useLocalStorage(time_localkeyname_Str, String(time_Num), true);
+    useLocalStorage(progress_count_localkeyname_Str, String(progress_count_Num), true);
+    useLocalStorage(theme_localkeyname_Str, String(theme_Bool), true);
+    useLocalStorage(task_Str_localkeyname_Str, "", true);
+    useLocalStorage(isopenaudiowindow_Str, String(isopenwin_Bool), true);
+    
     settime_Num(Number(localStorage.getItem(time_localkeyname_Str)));
     settask_Str(String(localStorage.getItem(task_Str_localkeyname_Str)));
+
+
+
+
+
   }
 
   /*  ————————————————————

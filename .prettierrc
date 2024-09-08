@@ -6,7 +6,7 @@
     "semi           => ステートメントの最後にセミコロンを付与",
     "singleQuote    => 二重引用符の代わりに単一引用符を使用",
     "useTabs        => タブではなくスペースを使用する"
-],
+  ],
   "printWidth": 200,
   "trailingComma": "es5",
   "tabWidth": 2,

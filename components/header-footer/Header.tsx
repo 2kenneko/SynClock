@@ -35,6 +35,7 @@ export default function Page() {
   const theme_localkeyname_Str: string = 'dark_theme';
 
 
+
 // ____ 画面のフルスクリーン切り替え  ____
   useEffect(() => {
 //  __________  ローカルストレージ->テーマをロード時に変更  __________
@@ -46,6 +47,10 @@ export default function Page() {
       //  darktheme -> false
     }
 //_________________________________________________________________
+
+
+
+
 
 
 

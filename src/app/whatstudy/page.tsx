@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './whatstudy.module.scss';
 import styles_btn from "@/components/styles/btn.module.scss";
+import useLocalStorage from '~/hooks/useLocalStorage';
 
 export default function Page() {
   // SCRIPT SETUP
@@ -20,7 +21,10 @@ export default function Page() {
   *   TOPページへ遷移
   ———————————————— */
   function enterTask() {
-    localStorage.setItem(whatstudy_locakkeyname_Str, task_Str);
+    //localStorage.setItem(whatstudy_locakkeyname_Str, task_Str);
+
+    useLocalStorage(whatstudy_locakkeyname_Str, task_Str, false);
+    
     router.push(link_top);
   }
 
