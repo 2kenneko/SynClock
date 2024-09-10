@@ -63,8 +63,6 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
         ${styles_09.dark_mode}
         ${styles_10.dark_mode}
         
-        
-        
         `: ''}`}>
         <Header />
         <AudioPlayer />
