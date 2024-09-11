@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import styles from './todo.module.scss';
 import styles_btn from "@/components/styles/btn.module.scss";
+import clearsound from "@/assets/audio/clearsound.mp3";
 
 type Todo = {
   id: number;
@@ -43,8 +44,15 @@ export default function Page() {
     setNewTodo('');
   };
 
+  // 音を鳴らす関数
+  const playSound = () => {
+    const audio = new Audio(clearsound);
+    audio.play();
+  };
+
   const handleToggleTodo = (id: number) => {
     setTodos(todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)));
+    playSound();
   };
 
   const handleDeleteTodo = (id: number) => {
@@ -63,6 +71,8 @@ export default function Page() {
   useEffect(() => {
     document.title = 'todo';
   }, []);
+
+  
 
   return (
     <div>
