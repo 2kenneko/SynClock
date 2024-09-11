@@ -135,6 +135,31 @@ export default function Page() {
     setprogress_Num(0);
     setprogress_count_Num(0);
   }
+//ゲージの色変化
+function getProgressBarColor(progress: number): string {
+  // 進捗度に応じた色を計算する
+  const percentage = progress / 100;
+
+  // 色の境界を設定
+  const boundary = 0.5; // 青から黄色に変わる境界
+
+  if (percentage <= boundary) {
+    // 青から黄色に変わる部分
+    const ratio = percentage / boundary;
+    const r = Math.floor(255 * ratio);
+    const g = Math.floor(255 * (1 - ratio));
+    const b = 255;
+    return `rgb(${r}, ${g}, ${b})`; // 青から黄色へのグラデーション
+  } else {
+    // 黄色から赤に変わる部分
+    const ratio = (percentage - boundary) / (1 - boundary);
+    const r = 255;
+    const g = Math.floor(255 * (1 - ratio));
+    const b = 0;
+    return `rgb(${r}, ${g}, ${b})`; // 黄色から赤色へのグラデーション
+  }
+}
+  
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -169,7 +194,7 @@ export default function Page() {
   }, [time_Num]);
 
   return (
-    <main id="app" >
+    <main id="app">
       <div>
         <div className={styles.timer_container}>
           <h1>タイマーテスト</h1>
@@ -185,7 +210,7 @@ export default function Page() {
               </div>
             )}
           </div>
-
+  
           <div style={{ position: 'relative' }}>
             <Image
               src={running_stickman_link.src}
@@ -201,28 +226,34 @@ export default function Page() {
               }}
             />
           </div>
-
+  
           <div className={styles.progress_bar}>
-            <div className={styles.progress} style={{ width: `${progress_Num * (1 / 6)}%` }}></div>
+            <div
+              className={styles.progress}
+              style={{ 
+                width: `${progress_Num * (1 / 6)}%`, 
+                backgroundColor: getProgressBarColor(progress_Num * (1 / 6))
+              }}
+            ></div>
           </div>
         </div>
         <div className={styles.btn_main}>
           <button className={`${styles_btn.primary_btn} ${togglebtn_Bool ? 'hover' : ''}`} onClick={toggleRest}>
             {isResting_Bool ? 'REST' : 'studying'}
           </button>
-
+  
           <button className={styles_btn.secondary_btn} onClick={cleartime}>
             ClearTime
           </button>
         </div>
-
+  
         {/* Selected_imageが存在する場合に表示 */}
         {selectedImage && (
           <div className={styles.selected_image}>
             <Image src={selectedImage} alt="Selected" width={200} height={200} />
           </div>
         )}
-
+  
         <div className={styles.bot_container}>
           <Bot />
           <Bot />
@@ -230,5 +261,4 @@ export default function Page() {
         </div>
       </div>
     </main>
-  );
-}
+  )};
