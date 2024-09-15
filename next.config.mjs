@@ -7,6 +7,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false, // Prevents double rendering in development mode
+  output: 'export',
+  distDir: 'dist',
+  trailingSlash: true,
   webpack(config) {
     // Add alias for paths
     config.resolve.alias['@'] = path.join(__dirname, 'src');
