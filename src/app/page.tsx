@@ -141,7 +141,7 @@ function getProgressBarColor(progress: number): string {
           return time_Num;
         });
       }
-    }, 20);
+    }, 1000);
     return () => clearInterval(intervalId);
   }, [isResting_Bool]);
 
