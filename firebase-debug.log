@@ -1,0 +1,99 @@
+[debug] [2024-09-15T07:18:56.453Z] ----------------------------------------------------------------------
+[debug] [2024-09-15T07:18:56.456Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\wata3\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-09-15T07:18:56.456Z] CLI Version:   13.17.0
+[debug] [2024-09-15T07:18:56.456Z] Platform:      win32
+[debug] [2024-09-15T07:18:56.456Z] Node Version:  v20.16.0
+[debug] [2024-09-15T07:18:56.456Z] Time:          Sun Sep 15 2024 16:18:56 GMT+0900 (Japan Standard Time)
+[debug] [2024-09-15T07:18:56.456Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-15T07:18:56.462Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-15T07:18:56.462Z] > authorizing via signed-in user (2kenneko@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\Programing\js\ClockShare_React\clockshare_react
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-09-15T07:19:03.210Z] Using project from CLI flag: clockshare
+[debug] [2024-09-15T07:19:03.212Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clockshare [none]
+[debug] [2024-09-15T07:19:03.713Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clockshare 403
+[debug] [2024-09-15T07:19:03.713Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clockshare {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2024-09-15T07:19:03.714Z] HTTP Error: 403, The caller does not have permission
+[debug] [2024-09-15T07:19:03.803Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\wata3\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\wata3\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:305:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project clockshare. Please make sure the project exists and your account has permission to access it.
+[debug] [2024-09-15T07:25:39.690Z] ----------------------------------------------------------------------
+[debug] [2024-09-15T07:25:39.692Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\wata3\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-09-15T07:25:39.692Z] CLI Version:   13.17.0
+[debug] [2024-09-15T07:25:39.692Z] Platform:      win32
+[debug] [2024-09-15T07:25:39.693Z] Node Version:  v20.16.0
+[debug] [2024-09-15T07:25:39.693Z] Time:          Sun Sep 15 2024 16:25:39 GMT+0900 (Japan Standard Time)
+[debug] [2024-09-15T07:25:39.693Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-15T07:25:39.699Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-15T07:25:39.699Z] > authorizing via signed-in user (2kenneko@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\Programing\js\ClockShare_React\clockshare_react
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-09-15T07:25:42.702Z] Using project from CLI flag: clockshare
+[debug] [2024-09-15T07:25:42.704Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clockshare [none]
+[debug] [2024-09-15T07:25:43.199Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clockshare 403
+[debug] [2024-09-15T07:25:43.200Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clockshare {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2024-09-15T07:25:43.200Z] HTTP Error: 403, The caller does not have permission
+[debug] [2024-09-15T07:25:43.295Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\wata3\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\wata3\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:305:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project clockshare. Please make sure the project exists and your account has permission to access it.
+[debug] [2024-09-15T07:26:25.436Z] ----------------------------------------------------------------------
+[debug] [2024-09-15T07:26:25.438Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\wata3\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-09-15T07:26:25.438Z] CLI Version:   13.17.0
+[debug] [2024-09-15T07:26:25.438Z] Platform:      win32
+[debug] [2024-09-15T07:26:25.438Z] Node Version:  v20.16.0
+[debug] [2024-09-15T07:26:25.438Z] Time:          Sun Sep 15 2024 16:26:25 GMT+0900 (Japan Standard Time)
+[debug] [2024-09-15T07:26:25.439Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-15T07:26:25.444Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-15T07:26:25.445Z] > authorizing via signed-in user (2kenneko@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\Programing\js\ClockShare_React\clockshare_react
+
