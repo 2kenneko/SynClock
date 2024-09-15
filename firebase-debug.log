@@ -19,3 +19,46 @@ You're about to initialize a Firebase project in this directory:
 
   E:\Programing\js\2kewnneko\ClockShare_React
 
+[debug] [2024-09-15T08:30:19.759Z] ----------------------------------------------------------------------
+[debug] [2024-09-15T08:30:19.762Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\wata3\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-09-15T08:30:19.762Z] CLI Version:   13.17.0
+[debug] [2024-09-15T08:30:19.762Z] Platform:      win32
+[debug] [2024-09-15T08:30:19.762Z] Node Version:  v20.16.0
+[debug] [2024-09-15T08:30:19.762Z] Time:          Sun Sep 15 2024 17:30:19 GMT+0900 (Japan Standard Time)
+[debug] [2024-09-15T08:30:19.762Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-15T08:30:19.768Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-15T08:30:19.768Z] > authorizing via signed-in user (2kenneko@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\Programing\js\2kewnneko\ClockShare_React
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-09-15T08:30:23.346Z] Using project from CLI flag: clockshare-f8b57
+[debug] [2024-09-15T08:30:23.348Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clockshare-f8b57 [none]
+[debug] [2024-09-15T08:30:23.670Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clockshare-f8b57 200
+[debug] [2024-09-15T08:30:23.671Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clockshare-f8b57 {"projectId":"clockshare-f8b57","projectNumber":"134879585111","displayName":"clockshare","name":"projects/clockshare-f8b57","resources":{"hostingSite":"clockshare-f8b57"},"state":"ACTIVE","etag":"1_a41d94d9-c533-4712-b07f-46089d9e2663"}
+[info] i  Using project clockshare-f8b57 (clockshare) 
+[info] 
+=== Hosting Setup
+[debug] [2024-09-15T08:30:23.675Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clockshare-f8b57 [none]
+[debug] [2024-09-15T08:30:23.896Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clockshare-f8b57 200
+[debug] [2024-09-15T08:30:23.896Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clockshare-f8b57 {"projectId":"clockshare-f8b57","projectNumber":"134879585111","displayName":"clockshare","name":"projects/clockshare-f8b57","resources":{"hostingSite":"clockshare-f8b57"},"state":"ACTIVE","etag":"1_a41d94d9-c533-4712-b07f-46089d9e2663"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
