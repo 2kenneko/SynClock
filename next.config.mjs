@@ -10,6 +10,10 @@ const nextConfig = {
   output: 'export',
   distDir: 'dist',
   trailingSlash: true,
+
+  images: {
+    unoptimized: true,
+  },
   webpack(config) {
     // Add alias for paths
     config.resolve.alias['@'] = path.join(__dirname, 'src');

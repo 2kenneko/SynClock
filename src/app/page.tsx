@@ -195,6 +195,8 @@ function getProgressBarColor(progress: number): string {
                 width: '100%',
                 height: 'auto',
               }}
+
+              
             />
           </div>
   
