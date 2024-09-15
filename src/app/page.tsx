@@ -94,21 +94,6 @@ export default function Page() {
     ローカルストレージを確認する
   ———————————————————————  */
   function checklocalkey() {
-    // if (!localStorage.getItem(time_localkeyname_Str)) {
-    //   localStorage.setItem(time_localkeyname_Str, String(time_Num));
-    // }
-    // if (!localStorage.getItem(progress_count_localkeyname_Str)) {
-    //   localStorage.setItem(progress_count_localkeyname_Str, String(progress_count_Num));
-    // }
-    // if (!localStorage.getItem(theme_localkeyname_Str)) {
-    //   localStorage.setItem(theme_localkeyname_Str, String(theme_Bool));
-    // }
-    // if (!localStorage.getItem(task_Str_localkeyname_Str)) {
-    //   localStorage.setItem(task_Str_localkeyname_Str, '');
-    // }
-    // if (!localStorage.getItem(isopenaudiowindow_Str)) {
-    //   localStorage.setItem(isopenaudiowindow_Str, String(isopenwin_Bool));
-    // }
     useLocalStorage(time_localkeyname_Str, String(time_Num), true);
     useLocalStorage(progress_count_localkeyname_Str, String(progress_count_Num), true);
     useLocalStorage(theme_localkeyname_Str, String(theme_Bool), true);
@@ -138,28 +123,14 @@ export default function Page() {
 //ゲージの色変化
 function getProgressBarColor(progress: number): string {
   // 進捗度に応じた色を計算する
-  const percentage = progress / 100;
+  const percentage = progress / 100 * 360;
 
-  // 色の境界を設定
-  const boundary = 0.5; // 青から黄色に変わる境界
-
-  if (percentage <= boundary) {
-    // 青から黄色に変わる部分
-    const ratio = percentage / boundary;
-    const r = Math.floor(255 * ratio);
-    const g = Math.floor(255 * (1 - ratio));
-    const b = 255;
-    return `rgb(${r}, ${g}, ${b})`; // 青から黄色へのグラデーション
-  } else {
-    // 黄色から赤に変わる部分
-    const ratio = (percentage - boundary) / (1 - boundary);
-    const r = 255;
-    const g = Math.floor(255 * (1 - ratio));
-    const b = 0;
-    return `rgb(${r}, ${g}, ${b})`; // 黄色から赤色へのグラデーション
-  }
+  return `hsl(${percentage}, ${100}%, ${50}%)`;
 }
-  
+
+
+
+
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -170,7 +141,7 @@ function getProgressBarColor(progress: number): string {
           return time_Num;
         });
       }
-    }, 1000);
+    }, 20);
     return () => clearInterval(intervalId);
   }, [isResting_Bool]);
 
