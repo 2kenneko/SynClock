@@ -9,8 +9,10 @@ import { atom, useRecoilState } from 'recoil';
 import maxmize_icon from '@/assets/images/svgs/maximize.svg';
 import minimize_icon from '@/assets/images/svgs/minimize.svg';
 import darkmode_icon from '@/assets/images/svgs/darkmode.svg';
-import lightmode_icon from '@/assets/images/svgs/lightmode.svg'
+import lightmode_icon from '@/assets/images/svgs/lightmode.svg';
+import logo from '@/assets/logo/Icon.svg'
 import { useHotkeys } from 'react-hotkeys-hook';
+
 
 //キーを保存
 export const darkThemeState = atom({
@@ -121,7 +123,10 @@ export default function Page() {
       <div className={theme_Bool ? `${styles.dark_mode} ${styles_btn.dark_mode}` : ''}>
         <header className={styles.header}>
           <div className={styles['header-left']}>
-            <h1 className={styles['header_text']}>SynClock</h1>
+            {/* <h1 className={styles['header_text']}>SynClock</h1> */}
+
+            <Image src={logo.src} width={200} height={200} alt="" loading="lazy" className={styles.icon} />
+
           </div>
           <div className={styles['header-right']}>
             <div className={styles['header_btn_container']}>

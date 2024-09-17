@@ -168,7 +168,7 @@ function getProgressBarColor(progress: number): string {
     <main id="app">
       <div>
         <div className={styles.timer_container}>
-          <h1>SynClock</h1>
+          {/* <h1>SynClock</h1> */}
           <p>今勉強していること：{task_Str}</p>
           <p>
             check: {String(progress_count_Num)} time: {time_Num}

@@ -1,0 +1,368 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/app/page.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/*
+*   ボタンのCSSは @/components/styles/btn.module.scss に入っています
+*/
+/*  フォントのインストール  */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+#page_app__YzTRe {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+  z-index: 100;
+}
+
+.page_timer_container__NkXzW {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.page_maincontent__YJUXS {
+  color: red;
+  font-weight: bold;
+  z-index: 10;
+  font-size: 12vw;
+  font-family: roboto;
+}
+
+.page_maincontent_rest__tlkA7 {
+  color: blue;
+  font-weight: bold;
+  z-index: 10;
+  font-size: 12vw;
+}
+
+.page_progress_bar__xXLDp {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 50vw;
+  max-width: 700px;
+  z-index: 1;
+}
+
+.page_progress__GNJr0 {
+  height: 20px;
+  background-color: #3498db;
+  width: 0;
+  transition: width 1s linear;
+}
+
+.page_btn_main__m9wmR {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page_running_stickman__a_sIM {
+  width: 1vw;
+  max-width: 200px;
+  margin: -40px;
+}
+
+.page_bot_container__kL62O {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+/*  
+  darkmodeの色を変更する
+*/
+.page_dark_mode__pepkd {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  z-index: -99;
+  transition: background-color 0.3s ease;
+}
+.page_dark_mode__pepkd .page_running_stickman__a_sIM {
+  filter: invert(100%);
+}
+.page_dark_mode__pepkd p {
+  color: #ffffff;
+}
+.page_dark_mode__pepkd h1 {
+  color: #ffffff;
+}
+.page_dark_mode__pepkd .page_clear-button__Sjhje {
+  background-color: #ff0000;
+}
+.page_dark_mode__pepkd .page_progress_bar__xXLDp {
+  background-color: #ffffff;
+}
+.page_dark_mode__pepkd .page_progress__GNJr0 {
+  background-color: #ff0000;
+}
+
+.page_selected_image__LuVxN {
+  position: fixed;
+  bottom: 0%;
+  z-index: 101;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./components/styles/btn.module.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/*
+ *    ボタンの見た目を設定するcss
+ *    使用する際は以下のプログラムを参考にしてくだい\
+ *    
+ *⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼
+ *    import styles_btn from '@/components/styles/btn.module.scss';
+ *    
+ *    return( 
+ *    <div className=${styles_btn.dark_mode}` : ''}>
+ *      <button className={styles_btn.primary_btn> テキスト </button>
+ *    </div>
+ *    )
+ * ⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼
+*/
+.btn_primary_btn__TJQkT {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 10px;
+  background-color: #00c3ff;
+}
+.btn_primary_btn__TJQkT:hover {
+  background-color: #009ccc;
+}
+
+.btn_secondary_btn__Z8wYk {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #e74c3c;
+}
+.btn_secondary_btn__Z8wYk:hover {
+  background-color: #c0392b;
+}
+
+.btn_header_btn__D7iYY {
+  justify-content: center;
+  display: flex;
+  height: 2.25rem; /* 9 * 0.25rem */
+  width: max-content;
+  justify-content: center;
+  border-radius: 0.375rem; /* 6px */
+  padding: 1rem;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  border: none;
+  align-items: center;
+}
+.btn_header_btn__D7iYY:hover {
+  background-color: #c1c1c2;
+  color: black;
+}
+
+/*
+* ダークモード
+*/
+.btn_dark_mode__wPcZB .btn_primary_btn__TJQkT {
+  background-color: #004d65;
+  color: #ffffff;
+}
+.btn_dark_mode__wPcZB .btn_secondary_btn__Z8wYk {
+  background-color: #732219;
+}
+.btn_dark_mode__wPcZB .btn_header_btn__D7iYY {
+  background-color: #3d3d43;
+  color: white;
+}
+.btn_dark_mode__wPcZB .btn_header_btn__D7iYY:hover {
+  background-color: #5f5f69;
+  color: white;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./components/bot.module.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.bot_set_font_size__aBi8t {
+  font-size: 150%;
+}
+
+.bot_parent__WoEHu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bot_CPU__Y9Avm {
+  /* margin-left: -50px; */
+  margin: 10px;
+}
+
+.bot_progress_bar_wrapper__vg9zB {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.bot_progress_bar__XznkL {
+  background-color: rgb(145, 145, 145);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 0;
+  width: 20vw;
+}
+
+.bot_progress__voaUP {
+  height: 20px;
+  background-color: blue;
+  width: 0;
+  transition: width 1s linear;
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./components/header-footer/header.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/*——————————————————————————
+//          ヘッダ
+*/
+.header_header__NFqH8 {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f5;
+  height: 7vw;
+  max-height: 60px;
+  justify-content: space-between;
+}
+
+.header_header-left__C29fa {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header_header-right__W4fIZ {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.header_header_btn_container__wgK8p {
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_header_text__cKRAp {
+  white-space: nowrap;
+  font-size: max(2vw, 25px);
+  visibility: visible;
+}
+
+@media screen and (max-width: 875px) {
+  .header_header_text__cKRAp {
+    display: none;
+  }
+}
+/*——————————————————————————
+//   最小/最大切り替えボタン
+*/
+.header_maximize_img__Ssk6W {
+  margin: 5px;
+}
+
+.header_icon_container__4kaxl {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.header_icon__gqsiN {
+  margin: 2px;
+}
+
+/*——————————————————————————
+//        オーバーレイ
+*/
+.header_dark_mode__tpyKo .header_overlay__iTrXZ {
+  background-color: #1e1e1e !important;
+}
+
+@media screen and (orientation: portrait) {
+  .header_landscape_screen__nbEdm {
+    width: 40vh;
+    z-index: 1001;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .header_overlay__iTrXZ {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+}
+@media only screen and (orientation: landscape) {
+  .header_landscape_screen__nbEdm {
+    width: 400px;
+    z-index: -1001;
+    transition: background-color 0.3s ease;
+    display: none;
+  }
+  .header_overlay__iTrXZ {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1000;
+    transition: background-color 0.3s ease;
+  }
+}
+/*——————————————————————————
+//         darkmode
+*/
+.header_dark_mode__tpyKo {
+  color: white;
+}
+.header_dark_mode__tpyKo .header_header__NFqH8 {
+  background-color: #3d3d43;
+}
+.header_dark_mode__tpyKo .header_icon__gqsiN {
+  filter: invert(1) hue-rotate(180deg);
+}
+.header_dark_mode__tpyKo .header_label__r3yCc {
+  line-height: 20px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-family: Arial;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: max(13px, 1vw);
+}
