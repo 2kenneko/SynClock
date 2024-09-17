@@ -59,11 +59,19 @@
   transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
   border: none;
   align-items: center;
+  cursor: pointer;
 
   &:hover {
     background-color: #c1c1c2;
     color: black;
   }
+}
+
+//  ボタンを透明にする
+.transparent_btn {
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
 }
 
 /*

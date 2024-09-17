@@ -168,10 +168,17 @@
   transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
   border: none;
   align-items: center;
+  cursor: pointer;
 }
 .btn_header_btn__D7iYY:hover {
   background-color: #c1c1c2;
   color: black;
+}
+
+.btn_transparent_btn__Bna_Y {
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
 }
 
 /*

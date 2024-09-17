@@ -124,9 +124,9 @@ export default function Page() {
         <header className={styles.header}>
           <div className={styles['header-left']}>
             {/* <h1 className={styles['header_text']}>SynClock</h1> */}
-
-            <Image src={logo.src} width={200} height={200} alt="" loading="lazy" className={styles.icon} />
-
+            <button onClick={top_link} className={styles_btn.transparent_btn}>
+              <Image src={logo.src} width={200} height={200} alt="" loading="lazy" className={styles.icon} />
+            </button>
           </div>
           <div className={styles['header-right']}>
             <div className={styles['header_btn_container']}>
