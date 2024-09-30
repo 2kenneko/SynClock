@@ -44,7 +44,7 @@ export default function Page() {
    *   progress_count -> プログレスバーのカウントの保存
    *   theme -> ダークテーマ
    *   task -> 何を勉強しているか
-   *
+   * 
    */
   let [time_Num, settime_Num] = useState<number>(0);
   let [progress_Num, setprogress_Num] = useState<number>(0);
