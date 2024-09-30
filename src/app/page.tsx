@@ -54,7 +54,7 @@ export default function Page() {
   const [task_Str, settask_Str] = useState<string>('');
   const [isResting_Bool, setisResting_Bool] = useState<boolean>(false);
   const [togglebtn_Bool] = useState<boolean>(false);
-  const [resttime_Num] = useState<number>(600);
+  const [resttime_Num] = useState<number>(6000); //休憩時間
 
   const time_localkeyname_Str: string = 'time';
   const progress_count_localkeyname_Str: string = 'check-count';
