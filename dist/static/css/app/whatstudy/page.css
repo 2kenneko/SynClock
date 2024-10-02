@@ -1,0 +1,123 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/app/whatstudy/whatstudy.module.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.whatstudy_main__BRZ2d {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.whatstudy_input__Pvxkv {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin: 10px;
+}
+
+.whatstudy_dark_mode__b2Xwx .whatstudy_h1__moagC {
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.whatstudy_dark_mode__b2Xwx .whatstudy_input__Pvxkv {
+  background-color: #3d3d43;
+  border-color: #5f5f69;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.whatstudy_dark_mode__b2Xwx .whatstudy_input__Pvxkv::placeholder {
+  color: #a4a4b5;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./components/styles/btn.module.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/*
+ *    ボタンの見た目を設定するcss
+ *    使用する際は以下のプログラムを参考にしてくだい\
+ *    
+ *⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼
+ *    import styles_btn from '@/components/styles/btn.module.scss';
+ *    
+ *    return( 
+ *    <div className=${styles_btn.dark_mode}` : ''}>
+ *      <button className={styles_btn.primary_btn> テキスト </button>
+ *    </div>
+ *    )
+ * ⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼⁼
+*/
+.btn_primary_btn__TJQkT {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 10px;
+  background-color: #00c3ff;
+}
+.btn_primary_btn__TJQkT:hover {
+  background-color: #009ccc;
+}
+
+.btn_secondary_btn__Z8wYk {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #e74c3c;
+}
+.btn_secondary_btn__Z8wYk:hover {
+  background-color: #c0392b;
+}
+
+.btn_header_btn__D7iYY {
+  justify-content: center;
+  display: flex;
+  height: 2.25rem; /* 9 * 0.25rem */
+  width: max-content;
+  justify-content: center;
+  border-radius: 0.375rem; /* 6px */
+  padding: 1rem;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  border: none;
+  align-items: center;
+  cursor: pointer;
+}
+.btn_header_btn__D7iYY:hover {
+  background-color: #c1c1c2;
+  color: black;
+}
+
+.btn_transparent_btn__Bna_Y {
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
+/*
+* ダークモード
+*/
+.btn_dark_mode__wPcZB .btn_primary_btn__TJQkT {
+  background-color: #004d65;
+  color: #ffffff;
+}
+.btn_dark_mode__wPcZB .btn_secondary_btn__Z8wYk {
+  background-color: #732219;
+}
+.btn_dark_mode__wPcZB .btn_header_btn__D7iYY {
+  background-color: #3d3d43;
+  color: white;
+}
+.btn_dark_mode__wPcZB .btn_header_btn__D7iYY:hover {
+  background-color: #5f5f69;
+  color: white;
+}
