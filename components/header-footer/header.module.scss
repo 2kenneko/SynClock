@@ -105,7 +105,9 @@
     transition: background-color 0.3s ease;
   }
 }
-
+.label {
+  font-family: Arial;
+}
 /*——————————————————————————
 //         darkmode
 */
@@ -122,9 +124,7 @@
   }
   .label {
     line-height: 20px;
-    font-family: sans-serif;
     letter-spacing: 1px;
-    font-family: Arial;
     white-space: nowrap;
     overflow: hidden;
 

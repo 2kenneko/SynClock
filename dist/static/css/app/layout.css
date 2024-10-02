@@ -192,6 +192,10 @@ input, button, textarea, select {
     transition: background-color 0.3s ease;
   }
 }
+.header_label__r3yCc {
+  font-family: Arial;
+}
+
 /*——————————————————————————
 //         darkmode
 */
@@ -206,9 +210,7 @@ input, button, textarea, select {
 }
 .header_dark_mode__tpyKo .header_label__r3yCc {
   line-height: 20px;
-  font-family: sans-serif;
   letter-spacing: 1px;
-  font-family: Arial;
   white-space: nowrap;
   overflow: hidden;
 }
