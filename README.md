@@ -6,7 +6,7 @@
 
 勉強などに使用することを目的としているwebタイマーです。
 
-## 機能
+## Function
 
 - **Timer**: webページを開くだけで使用できるタイマーです。
 - **Progress Bar**: １０分おきにプログレスバーがリセットされ、ポイントが加算れていきます。
@@ -16,6 +16,10 @@
 
 ## Demo
 
+### 製品版
+[https://clockshare-f8b57.web.app](https://clockshare-f8b57.web.app)
+
+### 開発版
 [https://2k2e2n.github.io/ClockShare_React/](https://2k2e2n.github.io/ClockShare_React/)
 
 ![リンク名](./assets/Readme/Demo.gif)
@@ -53,4 +57,10 @@ To start the development server, run:
 
 ```bash
 yarn run dev
+```
+
+### deploy firebase server
+
+```bash
+firebase deploy
 ```
