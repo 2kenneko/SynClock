@@ -152,11 +152,11 @@ export default function Page() {
                     Characterボタン 
                   _____________________
               */}
-              <div>
+              {/* <div>
                 <button onClick={character_link} className={styles_btn.header_btn}>
                   <span className={styles.label}>CHARACTER</span>
                 </button>
-              </div>
+              </div> */}
               {/*——————————————————————
                     What studyボタン 
                   _____________________

@@ -27,7 +27,7 @@
 }
 .header_text {
   white-space: nowrap;
-  font-size: max(2vw, 25px);
+  font-size: max(13px, 1vw);
   visibility: visible;
 }
 @media screen and (max-width: 875px) {
@@ -127,6 +127,6 @@
     font-family: Arial;
     white-space: nowrap;
     overflow: hidden;
-    font-size: max(13px, 1vw);
+
   }
 }
