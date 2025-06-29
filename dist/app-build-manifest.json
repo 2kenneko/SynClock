@@ -12,17 +12,20 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/todo/page": [
+    "/test/auth/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/todo/page.css",
-      "static/chunks/app/todo/page.js"
+      "static/chunks/app/test/auth/page.js"
     ],
-    "/whatstudy/page": [
+    "/test/signup/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/whatstudy/page.css",
-      "static/chunks/app/whatstudy/page.js"
+      "static/chunks/app/test/signup/page.js"
+    ],
+    "/test/login_success/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/test/login_success/page.js"
     ]
   }
 }

@@ -1,6 +1,7 @@
 {
+  "/test/auth/page": "app/test/auth/page.js",
+  "/test/signup/page": "app/test/signup/page.js",
   "/page": "app/page.js",
   "/icon.ico/route": "app/icon.ico/route.js",
-  "/whatstudy/page": "app/whatstudy/page.js",
-  "/todo/page": "app/todo/page.js"
+  "/test/login_success/page": "app/test/login_success/page.js"
 }
