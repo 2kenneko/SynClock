@@ -1,0 +1,177 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/app/event/page.module.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Page.module.scss
+  This file uses SCSS syntax with nesting for better readability.
+*/
+/* --- Variables (Optional, but good practice) --- */
+/* --- General Layout --- */
+.page_page__fnfVW {
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  padding: 1rem;
+}
+@media (min-width: 640px) {
+  .page_page__fnfVW {
+    padding: 2rem;
+  }
+}
+
+.page_container__3mLCb {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.page_header__1BR9H {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.page_header__1BR9H .page_title__MyEof {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+.page_header__1BR9H .page_subtitle__ACQlN {
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+.page_mainContent__U291u {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+@media (min-width: 1024px) {
+  .page_mainContent__U291u {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Card Styles --- */
+.page_card__DOfkU {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.page_card__DOfkU .page_cardTitle__I_bz5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+.page_card__DOfkU .page_emptyState__am9l0 {
+  color: #6b7280;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* --- Event List Styles --- */
+.page_eventList__7S_7N {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.page_eventItem__JIgFV {
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+.page_eventItem__JIgFV:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+.page_eventItem__JIgFV .page_eventItemHeader__pY6pI {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  cursor: pointer;
+}
+.page_eventItem__JIgFV .page_eventName__UUIX0 {
+  color: #1f2937;
+  font-weight: 500;
+}
+.page_eventItem__JIgFV .page_icon__vaKbY {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #6b7280;
+  transition: transform 0.3s ease-in-out;
+  flex-shrink: 0;
+}
+.page_eventItem__JIgFV .page_icon__vaKbY.page_iconRotated__8YrSA {
+  transform: rotate(180deg);
+}
+
+.page_joinedItem__4Mahh {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: #f0fdf4;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+.page_joinedItem__4Mahh:hover {
+  background-color: #dcfce7;
+}
+
+/* --- Collapsible Accordion --- */
+.page_collapsible__88xIK {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-in-out;
+}
+.page_collapsible__88xIK.page_collapsibleOpen__Fswkb {
+  grid-template-rows: 1fr;
+}
+.page_collapsible__88xIK .page_collapsibleInner__AhbAh {
+  overflow: hidden;
+}
+.page_collapsible__88xIK .page_detailsContent__pohgu {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+  margin: 0 1rem;
+}
+.page_collapsible__88xIK .page_detailsContent__pohgu .page_description__5NUeV {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* --- Button Styles --- */
+.page_button__GWffu {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+.page_button__GWffu:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.page_button__GWffu.page_buttonBlue__rCN4E {
+  background-color: #3b82f6;
+  width: 100%;
+}
+.page_button__GWffu.page_buttonBlue__rCN4E:hover {
+  background-color: #2563eb;
+}
+.page_button__GWffu.page_buttonRed__sW_Zm {
+  background-color: #ef4444;
+}
+.page_button__GWffu.page_buttonRed__sW_Zm:hover {
+  background-color: #dc2626;
+}

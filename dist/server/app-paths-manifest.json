@@ -1,8 +1,8 @@
 {
-  "/test/auth/page": "app/test/auth/page.js",
-  "/test/signup/page": "app/test/signup/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/whatstudy/page": "app/whatstudy/page.js",
   "/page": "app/page.js",
-  "/test/login_success/page": "app/test/login_success/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/icon.ico/route": "app/icon.ico/route.js"
+  "/event/page": "app/event/page.js",
+  "/icon.ico/route": "app/icon.ico/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }

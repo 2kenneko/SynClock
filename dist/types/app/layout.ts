@@ -1,4 +1,4 @@
-// File: E:\Programing\js\ClockShare_React\clockshare_react\src\app\layout.tsx
+// File: /Users/horoiwatatsumi/Documents/GitHub/ClockShare_React/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
