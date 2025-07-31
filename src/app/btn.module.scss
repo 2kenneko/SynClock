@@ -1,0 +1,106 @@
+.dark_mode {
+.baseBtn {
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+    border: none;
+    cursor: pointer;
+  
+    &:hover {
+      transform: scale(1.05);
+    }
+  
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px var(--focus-ring-color);
+    }
+  }
+  
+  .studyingBtn {
+    background-color: #22c55e;
+    color: #1f2937;
+    --focus-ring-color: rgba(74, 222, 128, 0.5);
+  
+    &:hover {
+      background-color: #4ade80;
+    }
+  }
+  
+  .restingBtn {
+    background-color: #0ea5e9;
+    color: white;
+    --focus-ring-color: rgba(56, 189, 248, 0.5);
+  
+    &:hover {
+      background-color: #38bdf8;
+    }
+  }
+  
+  .resetBtn {
+    background-color: #4b5563;
+    color: #e5e7eb;
+    --focus-ring-color: rgba(239, 68, 68, 0.5);
+  
+    &:hover {
+      background-color: #ef4444;
+      color: white;
+    }
+  }
+}
+
+.baseBtn {
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+    border: none;
+    cursor: pointer;
+  
+    &:hover {
+      transform: scale(1.05);
+    }
+  
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px var(--focus-ring-color);
+    }
+  }
+  
+  .studyingBtn {
+    background-color: #22c55e;
+    color: #ffffff; /* 文字色を白にすると緑が映える */
+    --focus-ring-color: rgba(74, 222, 128, 0.5);
+  
+    &:hover {
+      background-color: #16a34a; /* 少し濃い緑に */
+    }
+  }
+  
+  .restingBtn {
+    background-color: #0ea5e9;
+    color: white;
+    --focus-ring-color: rgba(56, 189, 248, 0.5);
+  
+    &:hover {
+      background-color: #0284c7; /* 少し濃い青に */
+    }
+  }
+  
+  .resetBtn {
+    background-color: #e5e7eb; /* 明るいグレーのボタン */
+    color: #374151; /* 文字色はダークグレー */
+    --focus-ring-color: rgba(156, 163, 175, 0.5);
+  
+    &:hover {
+      background-color: #d1d5db; /* ホバーで少し濃く */
+      color: #1f2937;
+    }
+  }
+  

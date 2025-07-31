@@ -951,111 +951,239 @@ input, button, textarea, select {
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/app/page.module.scss ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
-/*
-*   ボタンのCSSは @/components/styles/btn.module.scss に入っています
-*/
-/*  フォントのインストール  */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-#page_app__YzTRe {
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  z-index: 100;
-}
-
-.page_timer_container__NkXzW {
+.page_dark_mode__pepkd .page_background__RvLBA {
+  background-color: #111827;
+  color: white;
+  font-family: sans-serif;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+}
+.page_dark_mode__pepkd .page_container__LLik5 {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  background-color: rgba(31, 41, 55, 0.5);
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  padding: 3rem;
+  transition: all 0.5s;
+}
+.page_dark_mode__pepkd .page_headerSection__5CaMV {
   text-align: center;
+  margin-bottom: 2.5rem;
 }
-
-.page_maincontent__YJUXS {
-  color: red;
+.page_dark_mode__pepkd .page_taskLabel__mR4oa {
+  font-size: 1rem;
+  color: #9ca3af;
+}
+.page_dark_mode__pepkd .page_taskTitle__KhWz1 {
+  font-size: 1.875rem;
   font-weight: bold;
-  z-index: 10;
-  font-size: 12vw;
-  font-family: roboto;
-}
-
-.page_maincontent_rest__tlkA7 {
-  color: blue;
-  font-weight: bold;
-  z-index: 10;
-  font-size: 12vw;
-}
-
-.page_progress_bar__xXLDp {
-  background-color: #e0e0e0;
-  border-radius: 5px;
+  color: #7dd3fc;
+  white-space: nowrap;
   overflow: hidden;
-  margin: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 50vw;
-  max-width: 700px;
-  z-index: 1;
+  text-overflow: ellipsis;
+  min-height: 2.25rem;
+}
+.page_dark_mode__pepkd .page_timerSection__pwgnk {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.page_dark_mode__pepkd .page_timerDisplay__il_6u {
+  font-size: clamp(4rem, 20vw, 6rem);
+  font-family: monospace;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+.page_dark_mode__pepkd .page_restingLabel__jMG_I {
+  font-size: 1.25rem;
+  color: #7dd3fc;
+  margin-top: 1rem;
+  animation: page_pulse___oo4m 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes page_pulse___oo4m {
+  50% {
+    opacity: 0.5;
+  }
+}
+.page_dark_mode__pepkd .page_checkCountDisplay__rhA0L {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #d1d5db;
+}
+.page_dark_mode__pepkd .page_checkCountNumber__UuJNW {
+  font-weight: bold;
+  color: #fcd34d;
+}
+.page_dark_mode__pepkd .page_checkCountLabel__t_SN2 {
+  font-size: 1rem;
+  color: #9ca3af;
+  margin-left: 0.5rem;
+}
+.page_dark_mode__pepkd .page_progressSection__wmrCT {
+  width: 100%;
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
+}
+.page_dark_mode__pepkd .page_progressBarBackground__iYycz {
+  height: 1.25rem;
+  background-color: #374151;
+  border-radius: 9999px;
+  position: relative;
+}
+.page_dark_mode__pepkd .page_progressBarFill__nfFms {
+  height: 100%;
+  border-radius: 9999px;
+  transition: all 1s linear;
+}
+.page_dark_mode__pepkd .page_stickman__aBPXq {
+  position: absolute;
+  top: -3rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  transition: all 1s linear;
+}
+.page_dark_mode__pepkd .page_buttonsSection__nGvrU {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.5rem;
+  gap: 1.5rem;
 }
 
-.page_progress__GNJr0 {
-  height: 20px;
-  background-color: #3498db;
-  width: 0;
-  transition: width 1s linear;
-}
-
-.page_btn_main__m9wmR {
+.page_background__RvLBA {
+  background-color: #f3f4f6; /* 明るいグレーに変更 */
+  color: #1f2937; /* メインの文字色をダークグレーに */
+  font-family: sans-serif;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 }
 
-.page_running_stickman__a_sIM {
-  width: 1vw;
-  max-width: 200px;
-  margin: -40px;
+.page_container__LLik5 {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  background-color: #ffffff; /* 白に変更 */
+  border: 1px solid #e5e7eb; /* 明るい境界線に */
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* 柔らかい影に変更 */
+  padding: 3rem;
+  transition: all 0.5s;
 }
 
-.page_bot_container__kL62O {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-around;
+.page_headerSection__5CaMV {
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-/*  
-  darkmodeの色を変更する
-*/
-.page_dark_mode__pepkd {
-  background-color: #1e1e1e;
-  color: #ffffff;
-  z-index: -99;
-  transition: background-color 0.3s ease;
-}
-.page_dark_mode__pepkd .page_running_stickman__a_sIM {
-  filter: invert(100%);
-}
-.page_dark_mode__pepkd p {
-  color: #ffffff;
-}
-.page_dark_mode__pepkd h1 {
-  color: #ffffff;
-}
-.page_dark_mode__pepkd .page_clear-button__Sjhje {
-  background-color: #ff0000;
-}
-.page_dark_mode__pepkd .page_progress_bar__xXLDp {
-  background-color: #ffffff;
-}
-.page_dark_mode__pepkd .page_progress__GNJr0 {
-  background-color: #ff0000;
+.page_taskLabel__mR4oa {
+  font-size: 1rem;
+  color: #6b7280; /* 少し濃いグレーに */
 }
 
-.page_selected_image__LuVxN {
-  position: fixed;
-  bottom: 0%;
-  z-index: 101;
+.page_taskTitle__KhWz1 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #1d4ed8; /* はっきりとした青に変更 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.25rem;
+}
+
+.page_timerSection__pwgnk {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page_timerDisplay__il_6u {
+  font-size: clamp(4rem, 20vw, 6rem);
+  font-family: monospace;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.page_restingLabel__jMG_I {
+  font-size: 1.25rem;
+  color: #0ea5e9; /* 休憩中の文字色をスカイブルーに */
+  margin-top: 1rem;
+  animation: page_pulse___oo4m 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes page_pulse___oo4m {
+  50% {
+    opacity: 0.5;
+  }
+}
+.page_checkCountDisplay__rhA0L {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #4b5563; /* ダークグレーに */
+}
+
+.page_checkCountNumber__UuJNW {
+  font-weight: bold;
+  color: #f59e0b; /* 視認性の良いアンバー色に */
+}
+
+.page_checkCountLabel__t_SN2 {
+  font-size: 1rem;
+  color: #6b7280; /* 少し濃いグレーに */
+  margin-left: 0.5rem;
+}
+
+.page_progressSection__wmrCT {
+  width: 100%;
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.page_progressBarBackground__iYycz {
+  height: 1.25rem;
+  background-color: #e5e7eb; /* プログレスバーの背景を明るいグレーに */
+  border-radius: 9999px;
+  position: relative;
+}
+
+.page_progressBarFill__nfFms {
+  height: 100%;
+  border-radius: 9999px;
+  transition: all 1s linear;
+}
+
+.page_stickman__aBPXq {
+  position: absolute;
+  top: -3rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  transition: all 1s linear;
+}
+
+.page_buttonsSection__nGvrU {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.5rem;
+  gap: 1.5rem;
+}
+
+@keyframes page_time-pop__a7JXv {
+  50% {
+    transform: scale(1.05);
+  }
+}
+.page_timerAnimate__cphhw {
+  /* 時間が更新されたときに適用するアニメーションクラス */
+  animation: page_time-pop__a7JXv 0.3s ease-in-out;
 }
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./components/bot.module.scss ***!

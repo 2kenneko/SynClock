@@ -1,120 +1,251 @@
-/*
-*   ボタンのCSSは @/components/styles/btn.module.scss に入っています
-*/
-
-
-
-/*  フォントのインストール  */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-
-
-#app {
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  z-index: 100;
-
-}
-
-.timer_container {
+.dark_mode {
+  .background {
+  background-color: #111827;
+  color: white;
+  font-family: sans-serif;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  background-color: rgba(31, 41, 55, 0.5);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  padding: 3rem;
+  transition: all 0.5s;
+}
+
+.headerSection {
   text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-.maincontent {
-  color: red;
-  font-weight: bold;
-  z-index: 10;
-  font-size: 12vw;
-  font-family: roboto;
-}
-.maincontent_rest {
-  color: blue;
-  font-weight: bold;
-  z-index: 10;
-  font-size: 12vw;
+.taskLabel {
+  font-size: 1rem;
+  color: #9ca3af;
 }
 
-.progress_bar {
-  background-color: #e0e0e0;
-  border-radius: 5px;
+.taskTitle {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #7dd3fc;
+  white-space: nowrap;
   overflow: hidden;
-  margin: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 50vw;
-  max-width: 700px;
-  z-index: 1;
+  text-overflow: ellipsis;
+  min-height: 2.25rem;
 }
 
-.progress {
-  height: 20px;
-  background-color: #3498db;
-  width: 0;
-  transition: width 1s linear;
+.timerSection {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.btn_main {
+.timerDisplay {
+  font-size: clamp(4rem, 20vw, 6rem);
+  font-family: monospace;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.restingLabel {
+  font-size: 1.25rem;
+  color: #7dd3fc;
+  margin-top: 1rem;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.checkCountDisplay {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #d1d5db;
+}
+
+.checkCountNumber {
+  font-weight: bold;
+  color: #fcd34d;
+}
+
+.checkCountLabel {
+  font-size: 1rem;
+  color: #9ca3af;
+  margin-left: 0.5rem;
+}
+
+.progressSection {
+  width: 100%;
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.progressBarBackground {
+  height: 1.25rem;
+  background-color: #374151;
+  border-radius: 9999px;
+  position: relative;
+}
+
+.progressBarFill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: all 1s linear;
+}
+
+.stickman {
+  position: absolute;
+  top: -3rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  transition: all 1s linear;
+}
+
+.buttonsSection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+}
+
+.background {
+  background-color: #f3f4f6; /* 明るいグレーに変更 */
+  color: #1f2937; /* メインの文字色をダークグレーに */
+  font-family: sans-serif;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.running_stickman {
-  width: 1vw;
-  max-width: 200px;
-  margin: -40px;
+  padding: 1rem;
 }
 
-
-
-.bot_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-around;
+.container {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  background-color: #ffffff; /* 白に変更 */
+  border: 1px solid #e5e7eb; /* 明るい境界線に */
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* 柔らかい影に変更 */
+  padding: 3rem;
+  transition: all 0.5s;
 }
 
-/*  
-  darkmodeの色を変更する
-*/
+.headerSection {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
 
+.taskLabel {
+  font-size: 1rem;
+  color: #6b7280; /* 少し濃いグレーに */
+}
 
+.taskTitle {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #1d4ed8; /* はっきりとした青に変更 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.25rem;
+}
 
+.timerSection {
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
-.dark_mode {
-  background-color: #1e1e1e;
-  color: #ffffff;
-  z-index: -99;
-  transition: background-color 0.3s ease;
-  .running_stickman {
-    filter: invert(100%);
-  }
-  p {
-    color: #ffffff;
-  }
-  h1 {
-    color: #ffffff;
-  }
-  .clear-button {
-    background-color: #ff0000;
-  }
-  .progress_bar {
-    background-color: #ffffff;
-  }
-  .progress {
-    background-color: #ff0000;
+.timerDisplay {
+  font-size: clamp(4rem, 20vw, 6rem);
+  font-family: monospace;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.restingLabel {
+  font-size: 1.25rem;
+  color: #0ea5e9; /* 休憩中の文字色をスカイブルーに */
+  margin-top: 1rem;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
   }
 }
 
-.selected_image {
-  position: fixed;
-  bottom: 0%;
-  z-index: 101;
+.checkCountDisplay {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #4b5563; /* ダークグレーに */
 }
 
+.checkCountNumber {
+  font-weight: bold;
+  color: #f59e0b; /* 視認性の良いアンバー色に */
+}
 
+.checkCountLabel {
+  font-size: 1rem;
+  color: #6b7280; /* 少し濃いグレーに */
+  margin-left: 0.5rem;
+}
 
+.progressSection {
+  width: 100%;
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.progressBarBackground {
+  height: 1.25rem;
+  background-color: #e5e7eb; /* プログレスバーの背景を明るいグレーに */
+  border-radius: 9999px;
+  position: relative;
+}
+
+.progressBarFill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: all 1s linear;
+}
+
+.stickman {
+  position: absolute;
+  top: -3rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  transition: all 1s linear;
+}
+
+.buttonsSection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@keyframes time-pop {
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.timerAnimate {
+  /* 時間が更新されたときに適用するアニメーションクラス */
+  animation: time-pop 0.3s ease-in-out;
+}

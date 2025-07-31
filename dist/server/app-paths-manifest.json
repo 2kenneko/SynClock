@@ -1,8 +1,8 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/whatstudy/page": "app/whatstudy/page.js",
   "/page": "app/page.js",
-  "/event/page": "app/event/page.js",
   "/icon.ico/route": "app/icon.ico/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/whatstudy/page": "app/whatstudy/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/todo/page": "app/todo/page.js",
+  "/event/page": "app/event/page.js"
 }
